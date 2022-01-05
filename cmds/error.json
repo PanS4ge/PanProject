@@ -1,0 +1,54 @@
+{
+    "errors": [
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "local variable 'cd' referenced before assignment"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "'eco_earn'"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "'eco_earn'"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "not readable"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Expecting value: line 1 column 1 (char 0)"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "'850647239475068973'"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "'850647239475068973'"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "'850647239475068973'"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "name 'cd' is not defined"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "'eco_earn'"
+        }
+    ]
+}

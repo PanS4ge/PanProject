@@ -1,0 +1,183 @@
+{
+    "Win": [
+        {
+        "System": "Windows 11 Professional",
+        "SysKey": "A269N-WFGWX-YVC9B-4J6C9-T83GX"},{
+        "System": "Windows 11 Pro",
+        "SysKey": "ZK7JG-NPHTM-C97JM-9MPGT-3V66T"},{
+        "System": "Windows 11 Professional N",
+        "SysKey": "MH37W-N47XK-V7XM9-C7227-GCQG9"},{
+        "System": "Windows 11 Enterprise",
+        "SysKey": "BPPR9-FWDCX-D2C8J-H872K-2YT43"},{
+        "System": "Windows 11 Enterprise N",
+        "SysKey": "RPH2V-TTNVB-4X9Q3-TJR4H-KHJW4"},{
+        "System": "Windows 11 Education",
+        "SysKey": "BW6C2-QMPVW-D7KKK-3GKT6-VCFB2"},{
+        "System": "Windows 11 Pro 2020",
+        "SysKey": "Q269N-WFGWX-YVC9B-4J6C9-T83GX"},{
+        "System": "Windows 11 Enterprise",
+        "SysKey": "82NFX-8DJQP-P6BBQ-THF9C-7CG2H"},{
+        "System": "Windows 11 Enterprise G",
+        "SysKey": "IYVX9-NTFWV-6MDM3-9PT4T-4M68B"},{
+        "System": "Windows 11 Pro for Workstations",
+        "SysKey": "MRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J"},{
+        "System": "Windows 11 Ultimate",
+        "SysKey": "Q269N-WFGWX-YVC9B-4J6C9-T83GX"},{
+        "System": "Windows 11 Ultimate 64 bit",
+        "SysKey": "82NFX-8DJQP-P6BBQ-THF9C-7CG2H"},{
+        "System": "Windows 11 Ultimate",
+        "SysKey": "IYVX9-NTFWV-6MDM3-9PT4T-4M68B"},{
+        "System": "Windows 11 Ultimate Pro",
+        "SysKey": "MRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J"},{
+        "System": "Windows 10 S",
+        "SysKey": "3NF4D-GF9GY-63VKH-QRC3V-7QW8P"},{
+        "System": "Windows 10 Home",
+        "SysKey": "YTMG3-N6DKC-DKB77-7M9GH-8HVX7"},{
+        "System": "Windows 10 Home N",
+        "SysKey": "4CPRK-NM3K3-X6XXQ-RXX86-WXCHW"},{
+        "System": "Windows 10 Pro",
+        "SysKey": "W269N-WFGWX-YVC9B-4J6C9-T83GX"},{
+        "System": "Windows 10 Pro N",
+        "SysKey": "MH37W-N47XK-V7XM9-C7227-GCQG9"},{
+        "System": "Windows 10 Pro (Workstation Edition)",
+        "SysKey": "NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J"},{
+        "System": "Windows 10 Pro N (Workstation edition)",
+        "SysKey": "9FNHH-K3HBT-3W4TD-6383H-6XYWF"},{
+        "System": "Windows 10 Education",
+        "SysKey": "NW6C2-QMPVW-D7KKK-3GKT6-VCFB2"},{
+        "System": "Windows 10 Education N",
+        "SysKey": "84NGF-MHBT6-FXBX8-QWJK7-DRR8H"},{
+        "System": "Windows 10 Pro Education",
+        "SysKey": "6TP4R-GNPTD-KYYHQ-7B7DP-J447Y"},{
+        "System": "Windows 10 Pro Education N",
+        "SysKey": "YVWGF-BXNMC-HTQYQ-CPQ99-66QFC"},{
+        "System": "Windows 10 Enterprise",
+        "SysKey": "NPPR9-FWDCX-D2C8J-H872K-2YT43"},{
+        "System": "Windows 10 Enterprise G N",
+        "SysKey": "44RPN-FTY23-9VTTB-MP9BX-T84FV"},{
+        "System": "Windows 10 Enterprise N",
+        "SysKey": "DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4"},{
+        "System": "Windows 10 Enterprise G",
+        "SysKey": "YYVX9-NTFWV-6MDM3-9PT4T-4M68B"},{
+        "System": "Windows 10 Enterprise LTSC 2019",
+        "SysKey": "M7XTQ-FN8P6-TTKYV-9D4CC-J462D"},{
+        "System": "Windows 7 Starter",
+        "SysKey": "7Q28W-FT9PC-CMMYT-WHMY2-89M6G"},{
+        "System": "Windows 7 Home Basic",
+        "SysKey": "YGFVB-QTFXQ-3H233-PTWTJ-YRYRV"},{
+        "System": "Windows 7 Home Premium",
+        "SysKey": "RHPQ2-RMFJH-74XYM-BH4JX-XM76F"},{
+        "System": "Windows 7 Professional",
+        "SysKey": "HYF8J-CVRMY-CM74G-RPHKF-PW487"},{
+        "System": "Windows 7 Ultimate",
+        "SysKey": "D4F6K-QK3RD-TMVMJ-BBMRX-3MBMV"},{
+        "System": "Windows 7 Enterprise",
+        "SysKey": "H7X92-3VPBB-Q799D-Y6JJ3-86WC6"},{
+        "System": "Windows 7 Starter N",
+        "SysKey": "D4C3G-38HGY-HGQCV-QCWR8-97FFR"},{
+        "System": "Windows 7 Home Basic N",
+        "SysKey": "MD83G-H98CG-DXPYQ-Q8GCR-HM8X2"},{
+        "System": "Windows 7 Home Premium N",
+        "SysKey": "D3PVQ-V7M4J-9Q9K3-GG4K3-F99JM"},{
+        "System": "Windows 7 Professional N",
+        "SysKey": "BKFRB-RTCT3-9HW44-FX3X8-M48M6"},{
+        "System": "Windows 7 Ultimate N",
+        "SysKey": "HTJK6-DXX8T-TVCR6-KDG67-97J8Q"},{
+        "System": "Windows 7 Enterprise N",
+        "SysKey": "BQ4TH-BWRRY-424Y9-7PQX2-B4WBD"},{
+        "System": "Windows 7 Starter E",
+        "SysKey": "BRQCV-K7HGQ-CKXP6-2XP7K-F233B"},{
+        "System": "Windows 7 Home Basic E",
+        "SysKey": "VTKM9-74GQY-K3W94-47DHV-FTXJY"},{
+        "System": "Windows 7 Home Premium E",
+        "SysKey": "76BRM-9Q4K3-QDJ48-FH4F3-9WT2R"},{
+        "System": "Windows 7 Professional E",
+        "SysKey": "3YHKG-DVQ27-RYRBX-JMPVM-WG38T"},{
+        "System": "Windows 7 Ultimate E",
+        "SysKey": "TWMF7-M387V-XKW4Y-PVQQD-RK7C8"},{
+        "System": "Windows 7 Enterprise E",
+        "SysKey": "H3V6Q-JKQJG-GKVK3-FDDRF-TCKVR"},{
+        "System": "Windows 8",
+        "SysKey": "FB4WR-32NVD-4RW79-XQFWH-CYQG3"},{
+        "System": "Windows 8 (ARM)",
+        "SysKey": "6D4CN-WMGRW-DG8M6-XX8W9-3RPT8"},{
+        "System": "Windows 8 (Country Specific)",
+        "SysKey": "XYNVP-TW798-F8893-7B89K-8QHDK"},{
+        "System": "Windows 8 (Single Language)",
+        "SysKey": "XBRND-QDJTG-CQJDB-7DRBW-RX6HB"},{
+        "System": "Windows 8 Professional",
+        "SysKey": "XKY4K-2NRWR-8F6P2-448RF-CRYQH"},{
+        "System": "Windows 8 Professional with WMC",
+        "SysKey": "RR3BN-3YY9P-9D7FC-7J4YF-QGJXW"},{
+        "System": "Windows 8 Enterprise",
+        "SysKey": "32JNW-9KQ84-P47T8-D8GGY-CWCK7"},{
+        "System": "Windows 8 N",
+        "SysKey": "VDKYM-JNKJ7-DC4X9-BT3QR-JHRDC"},{
+        "System": "Windows 8 Professional N",
+        "SysKey": "BHHD4-FKNK8-89X83-HTGM4-3C73G"},{
+        "System": "Windows 8 Enterprise N",
+        "SysKey": "NCVKH-RB9D4-R86X8-GB8WG-4M2K6"},{
+        "System": "Windows 8.1",
+        "SysKey": "334NH-RXG76-64THK-C7CKG-D3VPT"},{
+        "System": "Windows 8.1 (ARM)",
+        "SysKey": "NK2V7-9DWXG-KMTWQ-K9H9M-6VHPJ"},{
+        "System": "Windows 8.1 (Country Specific)",
+        "SysKey": "TNH8J-KG84C-TRMG4-FFD7J-VH4WX"},{
+        "System": "Windows 8.1 (Single Language)",
+        "SysKey": "Y9NXP-XT8MV-PT9TG-97CT3-9D6TC"},{
+        "System": "Windows 8.1 Professional",
+        "SysKey": "GCRJD-8NW9H-F2CDX-CCM8D-9D6T9"},{
+        "System": "Windows 8.1 Professional with WMC",
+        "SysKey": "GBFNG-2X3TC-8R27F-RMKYB-JK7QT"},{
+        "System": "Windows 8.1 Enterprise",
+        "SysKey": "FHQNR-XYXYC-8PMHT-TV4PH-DRQ3H"},{
+        "System": "Windows 8.1 N",
+        "SysKey": "6NPQ8-PK64X-W4WMM-MF84V-RGB89"},{
+        "System": "Windows 8.1 Professional N",
+        "SysKey": "JRBBN-4Q997-H4RM2-H3B7W-Q68KC"},{
+        "System": "Windows 8.1 Enterprise N",
+        "SysKey": "NDRDJ-3YBP2-8WTKD-CK7VB-HT8KW"},{
+        "System": "Windows Server 2008 Standard",
+        "SysKey": "TM24T-X9RMF-VWXK6-X8JC9-BFGM2"},{
+        "System": "Windows Server 2008 Web",
+        "SysKey": "WYR28-R7TFJ-3X2YQ-YCY4H-M249D"},{
+        "System": "Windows Server 2008 HPC",
+        "SysKey": "RCTX3-KWVHP-BR6TB-RB6DM-6X7HP"},{
+        "System": "Windows Server 2008 Enterprise",
+        "SysKey": "YQGMW-MPWTJ-34KDK-48M3W-X4Q6V"},{
+        "System": "Windows Server 2008 Itanium",
+        "SysKey": "7YKJ4-CX8QP-Q23QY-7BYQM-H2893"},{
+        "System": "Windows Server 2008 Datacenter",
+        "SysKey": "7M67G-PC374-GR742-YH8V4-TCBY3"},{
+        "System": "Windows SBS 2008 Standard",
+        "SysKey": "PHYFD-HQ4XW-78PR4-2CXKF-V67KJ"},{
+        "System": "Windows SBS 2008 Premium",
+        "SysKey": "4TMY4-8JG4B-VKY8X-6TVDH-J7XFV"},{
+        "System": "Windows Server 2008 R2 Foundation",
+        "SysKey": "36RXV-4Y4PJ-B7DWH-XY4VW-KQXDQ"},{
+        "System": "Windows Server 2008 R2 Standard",
+        "SysKey": "YC6KT-GKW9T-YTKYR-T4X34-R7VHC"},{
+        "System": "Windows Server 2008 R2 Web",
+        "SysKey": "6TPJF-RBVHG-WBW2R-86QPH-6RTM4"},{
+        "System": "Windows Server 2008 R2 HPC",
+        "SysKey": "TT8MH-CG224-D3D7Q-498W2-9QCTX"},{
+        "System": "Windows Server 2008 R2 Enterprise",
+        "SysKey": "489J6-VHDMP-X63PK-3K798-CPX3Y"},{
+        "System": "Windows Server 2008 R2 Itanium",
+        "SysKey": "GT63C-RJFQ3-4GMB6-BRFB9-CB83V"},{
+        "System": "Windows Server 2008 R2 Datacenter",
+        "SysKey": "74YFP-3QFB3-KQT8W-PMXWJ-7M648"},{
+        "System": "Microsoft Hyper-V Server 2008 R2",
+        "SysKey": "Q8R8C-T2W6H-7MGPB-4CQ9R-KR36H"},{
+        "System": "Windows MultiPoint Server 2010",
+        "SysKey": "736RG-XDKJK-V34PF-BHK87-J6X3K"},{
+        "System": "Windows SBS 2011 Standard",
+        "SysKey": "YT76W-VD3W9-QDCK4-9QFPX-WQY4J"},{
+        "System": "Windows SBS 2011 Premium",
+        "SysKey": "BXQQP-Q6Q6D-TR7TR-3YXQW-VFHKM"},{
+        "System": "Windows Home Server 2011 Standard",
+        "SysKey": "BTMWJ-8KHD9-B9BX8-J7JQ9-7M6J2"},{
+        "System": "Windows Home Server 2011 Premium",
+        "SysKey": "YQXDR-G2MBV-63VW2-JX8J2-FVTVG"}
+    ]
+}
