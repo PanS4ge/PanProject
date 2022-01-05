@@ -9,9 +9,8 @@ import utils
 
 async def Cmd(message):
     try:
-        if (not (await utils.admin_perms(message, message.author))):
-            return
-
+        if (not(await utils.Let_Load_Backup(message))):
+            return await message.channel.send("Only admins can do it")
         embedVar = discord.Embed(title="Loading Backup", description="for Pan-Project Bot.", color=0x00ff00)
         if(len(glob.glob(f"backup/{message.guild.id}.json")) == 0):
             await message.channel.send("Bro, I can't help you, you didn't make any backups")
@@ -24,7 +23,7 @@ async def Cmd(message):
         for channel in message.guild.voice_channels:
             await channel.delete()
         bac = {}
-        with open(f"backup/{message.guild.id}.json") as bu:
+        with open(f"backup/{serverid}.json") as bu:
             bac = json.load(bu)
         for cat in bac['backup']:
             cate = await message.guild.create_category(name=cat['category'])

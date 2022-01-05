@@ -6,7 +6,6 @@ import discord
 
 import utils
 
-
 async def Remove_Backups(gui):
     try:
         for x in glob.glob(f"backups/{gui.id}/*.json"):

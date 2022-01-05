@@ -2,7 +2,10 @@ import kernel
 
 import utils
 
+import threading
 import discord
+
+import asyncio
 
 from discord_components import DiscordComponents, Button, ButtonStyle
 
@@ -15,9 +18,7 @@ import json
 
 client = discord.Client()
 
-cntrun = 0
-
-botseys = [0, 0, 0]
+botseys = [0, 0]
 
 config = {}
 with open(f"config.json", encoding='utf8') as data:
@@ -31,10 +32,10 @@ async def on_ready():
     if(config["autorun"] == "True"):
         await kernel.Open_Bot_Kernel(config['token_normal'])
         botseys[0] = 1
-        await kernel.Open_Bot_Kernel(config['token_premium'])
-        botseys[1] = 1
-        await kernel.Open_Bot_Kernel(config['token_manager'])
-        botseys[2] = 1
+        #await kernel.Open_Bot_Kernel(config['token_premium'])
+        #botseys[1] = 1
+        #kernel.Open_Bot_Kernel(config['token_manager'])
+        #botseys[2] = 1
 
 @client.event
 async def on_message(message):
@@ -61,11 +62,11 @@ async def on_message(message):
                 ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
             else:
                 ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
+            #if(botseys[1] == 0):
+            #    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
+            #else:
+            #    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
             if(botseys[1] == 0):
-                ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
-            else:
-                ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
-            if(botseys[2] == 0):
                 ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
             else:
                 ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))
@@ -77,24 +78,18 @@ async def on_message(message):
         if(user_msg.startswith(config['prefix_runner'] + "allrun")):
             await kernel.Open_Bot_Kernel(config['token_normal'])
             botseys[0] = 1
-            await kernel.Open_Bot_Kernel(config['token_premium'])
-            botseys[1] = 1
+            #await kernel.Open_Bot_Kernel(config['token_premium'])
             await kernel.Open_Bot_Kernel(config['token_manager'])
-            botseys[2] = 1
-
-        if(user_msg.startswith(config['prefix_runner'] + "allkill")):
-            await message.channel.send("Goodbye!")
-            await kernel.Kill_Kernel(config['token_normal'])
-            await kernel.Kill_Kernel(config['token_premium'])
-            await kernel.Kill_Kernel(config['token_manager'])
-            exit("allkill cmd")
+            botseys[1] = 1
+            #await kernel.Open_Bot_Kernel(config['token_manager'])
+            #botseys[2] = 1
 
         if(user_msg.startswith(config['prefix_runner'])):
             await message.delete()
 
     except Exception as ex:
-        await message.channel.send(":warning: RUNNER KERNEL ERROR! :warning:\nLogging off & saving to database...")
-        await utils.save_error("Runner Kernel", os.path.basename(__file__), ex)
+        #await message.channel.send(":warning: RUNNER KERNEL ERROR! :warning:\nLogging off & saving to database...")
+        utils.noas_save_error("Runner Kernel", os.path.basename(__file__), ex)
 
 @client.event
 async def on_button_click(interaction):
@@ -111,35 +106,35 @@ async def on_button_click(interaction):
                     ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
                 else:
                     ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
+                #if (botseys[1] == 0):
+                #    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
+                #else:
+                #    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
                 if (botseys[1] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
-                if (botseys[2] == 0):
                     ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
                 else:
                     ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))
                 await mess.edit(content=f"{mess.content}", components=ar)
             await interaction.respond(content="Duck off.")
-        if ("oneon" in interaction.component.custom_id):
-            if (user.id in config['owners']):
-                await interaction.respond(content="Powering on..., please wait while it's running")
-                await kernel.Open_Bot_Kernel(config['token_premium'])
-                botseys[1] = 1
-                if (botseys[0] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
-                if (botseys[1] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
-                if (botseys[2] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))
-                await mess.edit(content=f"{mess.content}", components=ar)
-            await interaction.respond(content="Duck off.")
+        #if ("oneon" in interaction.component.custom_id):
+        #    if (user.id in config['owners']):
+        #        await interaction.respond(content="Powering on..., please wait while it's running")
+        #        await kernel.Open_Bot_Kernel(config['token_premium'])
+        #        botseys[1] = 1
+        #        if (botseys[0] == 0):
+        #            ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
+        #        else:
+        #            ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
+        #        if (botseys[1] == 0):
+        #            ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
+        #        else:
+        #            ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
+        #        if (botseys[2] == 0):
+        #            ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
+        #        else:
+        #            ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))
+        #        await mess.edit(content=f"{mess.content}", components=ar)
+        #    await interaction.respond(content="Duck off.")
         if ("twoon" in interaction.component.custom_id):
             if (user.id in config['owners']):
                 await interaction.respond(content="Powering on..., please wait while it's running")
@@ -149,11 +144,11 @@ async def on_button_click(interaction):
                     ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
                 else:
                     ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
+                # if (botseys[1] == 0):
+                #    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
+                # else:
+                #    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
                 if (botseys[1] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
-                if (botseys[2] == 0):
                     ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
                 else:
                     ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))
@@ -162,55 +157,55 @@ async def on_button_click(interaction):
         if ("zerooff" in interaction.component.custom_id):
             if (user.id in config['owners']):
                 await interaction.respond(content="Powering off...,")
-                await kernel.Kill_Kernel(config['token_normal'])
+                #await kernel.Kill_Kernel(config['token_normal'])
                 botseys[0] = 0
                 if (botseys[0] == 0):
                     ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
                 else:
                     ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
+                # if (botseys[1] == 0):
+                #    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
+                # else:
+                #    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
                 if (botseys[1] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
-                if (botseys[2] == 0):
                     ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
                 else:
                     ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))
                 await mess.edit(content=f"{mess.content}", components=ar)
             await interaction.respond(content="Duck off.")
-        if ("oneoff" in interaction.component.custom_id):
-            if (user.id in config['owners']):
-                await interaction.respond(content="Powering off...,")
-                await kernel.Kill_Kernel(config['token_premium'])
-                botseys[1] = 0
-                if (botseys[0] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
-                if (botseys[1] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
-                if (botseys[2] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))
-                await mess.edit(content=f"{mess.content}", components=ar)
-            await interaction.respond(content="Duck off.")
+        #if ("oneoff" in interaction.component.custom_id):
+            #if (user.id in config['owners']):
+            #    await interaction.respond(content="Powering off...,")
+            #    await kernel.Kill_Kernel(config['token_premium'])
+            #    botseys[1] = 0
+            #    if (botseys[0] == 0):
+            #        ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
+            #    else:
+            #        ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
+                # if (botseys[1] == 0):
+                #    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
+                # else:
+                #    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
+            #    if (botseys[1] == 0):
+            #        ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
+            #    else:
+            #        ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))
+            #    await mess.edit(content=f"{mess.content}", components=ar)
+            #await interaction.respond(content="Duck off.")
         if ("twooff" in interaction.component.custom_id):
             if (user.id in config['owners']):
                 await interaction.respond(content="Powering off...,")
-                await kernel.Kill_Kernel(config['token_manager'])
+                #await kernel.Kill_Kernel(config['token_manager'])
                 botseys[2] = 0
                 if (botseys[0] == 0):
                     ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
                 else:
                     ar[0].append(Button(style=ButtonStyle.red, label=config['name_normal'], custom_id="zerooff"))
+                # if (botseys[1] == 0):
+                #    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
+                # else:
+                #    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
                 if (botseys[1] == 0):
-                    ar[0].append(Button(style=ButtonStyle.green, label=config['name_premium'], custom_id="oneon"))
-                else:
-                    ar[0].append(Button(style=ButtonStyle.red, label=config['name_premium'], custom_id="oneoff"))
-                if (botseys[2] == 0):
                     ar[0].append(Button(style=ButtonStyle.green, label=config['name_manager'], custom_id="twoon"))
                 else:
                     ar[0].append(Button(style=ButtonStyle.red, label=config['name_manager'], custom_id="twooff"))

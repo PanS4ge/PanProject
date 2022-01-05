@@ -11,8 +11,8 @@ import utils
 
 async def Cmd(message):
     try:
-        if (not (await utils.admin_perms(message, message.author))):
-            return
+        if (not (await utils.Let_Load_Backup(message))):
+            return await message.channel.send("Only admins can do it")
         timeunixxx = int(time.time())
         backup_str = {"backup": []}
 

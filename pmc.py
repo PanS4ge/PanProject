@@ -3,10 +3,13 @@ import time
 import urllib
 
 import math
+import random
 
 import json
 
 from difflib import SequenceMatcher
+
+from cmds import economy
 
 import discord
 
@@ -34,14 +37,26 @@ def get_num_array(array):
 
 async def CheckMsg(message):
     try:
-        await Count_Message(message)
         await AntiFishing(message)
+
+        config = {}
+        with open(f"config.json", encoding='utf8') as data:
+            config = json.load(data)
+        if(message.author.id in config["gbans"]):
+            return
+
+        await Count_Message(message)
     except Exception as e:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)
         await message.channel.send("Error. I saved error in my error database, my creator will check out.")
 
 async def Count_Message(message):
-    cnt = {}
+    if(not(message.author.bot)):
+        cnt = {}
+        monet = random.randint(1, 250)
+        if(monet == random.randint(1, 250)):
+            await message.reply(f"Congrats! You found {monet}:fries: laying on <#{message.channel.id}>!")
+            await economy.Give_Money(message.guild.id, message.author.id, monet)
     try:
         with open(f"msgcount/{str(message.guild.id)}.json", "r") as cny:
             cnt = json.loads(cny.read())
@@ -58,6 +73,15 @@ async def Count_Message(message):
         f.write(json.dumps(cnt, indent=4, sort_keys=True))
 
 async def AntiFishing(message):
+    if(message.channel.id == 927869165753229312):
+        return
+
+    config = {}
+    with open(f"config.json", encoding='utf8') as data:
+        config = json.load(data)
+
+    if(message.author.id == config["id_normal"]):
+        return
     msglink = await Get_Link_From_Msg(message)
     if(msglink == False):
         return
@@ -71,7 +95,7 @@ async def AntiFishing(message):
 
     rdy = []
     hgdo = []
-    beg = ["", "www.", "http://", "https://", "http://www.", "https://www."]
+    beg = ["", "http://", "https://", "http://www.", "https://www."]
 
     for x in beg:
         if(x in msglink):
@@ -100,17 +124,17 @@ async def AntiFishing(message):
     per = get_num_array(rdy)
     if(per > 0.3):
         if(per < 0.5):
-            await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 100)}%\nAdditional \"Red flags\": {j}")
+            await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}")
             try:
                 await message.author.kick(reason=f"Posted scam link ({msglink})")
             except:
-                await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 100)}%\nAdditional \"Red flags\": {j}\n*Can't kick*")
+                await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\n*Can't kick*")
         else:
-            await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 100)}%\nAdditional \"Red flags\": {j}")
+            await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}")
             try:
                 await message.author.ban(reason=f"Posted scam link ({msglink})")
             except:
-                await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 100)}%\nAdditional \"Red flags\": {j}\n*Can't ban*")
+                await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\n*Can't ban*")
         with open("link.txt", "r") as link1:
             with open("trailingslash.txt", "r") as link2:
                 if(msglink.split("/")[0] in link1.readlines() and msglink.split("/")[1] in link2.readlines()):
@@ -119,8 +143,6 @@ async def AntiFishing(message):
                     with open("trailingslash.txt", "a") as link:
                         link.write("\n" + "/" + msglink.split("/")[1])
         await message.delete()
-        time.sleep(2)
-        await msgscan.delete()
     else:
-        await msgscan.edit(content=f"Scanned message - Scam link possibility {math.floor(per*100)}%")
+        await msgscan.edit(content=f"Scanned message - Scam link possibility {math.floor(per*150)}%")
 

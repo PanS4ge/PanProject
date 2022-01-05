@@ -1,18 +1,52 @@
 {
     "backup": [
         {
-            "category": "og\u00f3lny",
+            "category": "---> GET YOUR 1,000 \ud83c\udf5f <---",
             "text": [
-                "og\u00f3lny"
+                "\ud83c\udf5fclaim",
+                "\ud83c\udf5flog"
             ],
             "vc": []
         },
         {
-            "category": "og\u00f3lny",
-            "text": [],
-            "vc": [
-                "og\u00f3lny"
-            ]
+            "category": "Important",
+            "text": [
+                "announcements"
+            ],
+            "vc": []
+        },
+        {
+            "category": "Chats",
+            "text": [
+                "\ud83d\udcacchat-en",
+                "\ud83d\udcacchat-pl",
+                "\ud83d\udc3bcommands",
+                "\ud83e\udddbscam-links"
+            ],
+            "vc": []
+        },
+        {
+            "category": "Welcome",
+            "text": [
+                "\ud83d\udc4bwelcome_on_server",
+                "\ud83e\udd16i-added-bot"
+            ],
+            "vc": []
+        },
+        {
+            "category": "Propositions",
+            "text": [
+                "\ud83d\udc3cpropositions"
+            ],
+            "vc": []
+        },
+        {
+            "category": "Author Corner",
+            "text": [
+                "devtoolkit",
+                "rrun"
+            ],
+            "vc": []
         }
     ]
 }

@@ -3,52 +3,32 @@
         {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "local variable 'cd' referenced before assignment"
+            "error": "'module' object is not callable"
         },
         {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "'eco_earn'"
+            "error": "name 'json' is not defined"
         },
         {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "'eco_earn'"
+            "error": "name 'badge' is not defined"
         },
         {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "not readable"
+            "error": "list.remove(x): x not in list"
         },
         {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "Expecting value: line 1 column 1 (char 0)"
+            "error": "'834722499065282571'"
         },
         {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "'850647239475068973'"
-        },
-        {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "'850647239475068973'"
-        },
-        {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "'850647239475068973'"
-        },
-        {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "name 'cd' is not defined"
-        },
-        {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "'eco_earn'"
+            "error": "'834722499065282571'"
         }
     ]
 }

@@ -3,6 +3,8 @@ import glob
 import json
 import os
 
+import utils
+
 import discord
 
 def GetFiles():
@@ -19,7 +21,7 @@ async def Cmd(message, botvar):
 
         embedVar = discord.Embed(title="Help", description="for Pan-Project Bot.", color=0x00ff00)
         for x in GetFiles():
-            with open(x, "r") as f:
+            with open(x, "r", encoding="utf8") as f:
                 t = f.readline().replace("#", "")
                 t = t.replace("{}", config[f'prefix_{botvar}'])
                 t = t.replace("{HASH}", "#")

@@ -30,8 +30,8 @@ with open('serialkey.json', encoding='utf8') as data:
 
 async def Cmd(message):
     try:
-        if(not(utils.is_owner_of_bot(message.author.id))):
-            return False
+        #if(not(utils.is_owner_of_bot(message.author.id))):
+        #    return False
         embedVar = discord.Embed(title="Serial Keys", description="for Pansage Bot.", color=0x00ffff)
         ar = [[]]
         embedVar.add_field(name="Select one, and you will get key", value="Select on drop menu\n***PIRACY IS NO GOOD***", inline=False)
