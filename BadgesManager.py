@@ -32,6 +32,10 @@ def Remove_Badge(ide, towho):
         cny.close()
 
 def Have_Badge(ide, towho):
+    badge = {}
+    with open(f"badges.json", "r") as cny:
+        badge = json.loads(cny.read())
+        cny.close()
     return towho in badge['badge'][ide]['owners']
 
 def Fetch_Badges(towho):

@@ -3,32 +3,32 @@
         {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "'module' object is not callable"
+            "error": "'DMChannel' object has no attribute 'name'"
         },
         {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "name 'json' is not defined"
+            "message": "?random_prntscr",
+            "crashed_file": "random_prntscr.py",
+            "error": "'NoneType' object has no attribute 'filename'"
         },
         {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "name 'badge' is not defined"
+            "message": "?random_prntscr",
+            "crashed_file": "random_prntscr.py",
+            "error": "400 Bad Request (error code: 50006): Cannot send an empty message"
         },
         {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "list.remove(x): x not in list"
+            "message": "?random_prntsc",
+            "crashed_file": "random_prntscr.py",
+            "error": "400 Bad Request (error code: 50006): Cannot send an empty message"
         },
         {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "'834722499065282571'"
+            "message": "?random_prntsc",
+            "crashed_file": "random_prntscr.py",
+            "error": "400 Bad Request (error code: 50006): Cannot send an empty message"
         },
         {
-            "message": "Kernel (Pansage Bot#1885)",
+            "message": "Running / Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "'834722499065282571'"
+            "error": "Concurrent call to receive() is not allowed"
         }
     ]
 }

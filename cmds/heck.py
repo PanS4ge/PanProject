@@ -22,7 +22,7 @@ def get_num_array(array):
 
 async def Cmd(message, bot):
     try:
-        if("pansage" in message.content.split(' ')[2].lower()):
+        if("sage" in message.content.split(' ')[2].lower()):
             return await message.channel.send("You can't heck my owner")
         msgheck = await message.channel.send("☎️Calling hecker... Please wait...")
         time.sleep(random.randint(1, 10))

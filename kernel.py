@@ -7,11 +7,12 @@ import os
 from discord_components import DiscordComponents
 
 import BadgesManager
+import after_invoke_cmd
 
 import utils, pmc
 import o1k_msg
 
-from cmds import help, devtoolkit, backup, generate, ping, serialkey, loadbackup, economy, msgcnt, heck, guildinfo, activity, legend, eval, memberinfo
+from cmds import help, devtoolkit, backup, generate, ping, serialkey, loadbackup, economy, msgcnt, heck, guildinfo, activity, legend, eval, memberinfo, clearlinkdb, random_prntscr
 
 from manager import help as helpman
 from manager import activity as actiman
@@ -38,8 +39,9 @@ client = discord.Client(intents=intents)
 async def on_ready():
     global whichone
     DiscordComponents(client)
-    await client.change_presence(activity=discord.Game(name=f"ur mom"))
+    await client.change_presence(activity=discord.Game(name=f"good bro"))
     print("Successfully logged in.")
+    await after_invoke_cmd.Cmd(client)
 
 @client.event
 async def on_guild_join(guild):
@@ -66,7 +68,8 @@ async def on_guild_join(guild):
     except:
         pass
     chanid = client.get_channel(927848602821349386)
-    await chanid.send(f"I got added to server {guildname} ({guildid})")
+    #link = client.create_invite(destination=guild, xkcd=True, max_age=0, max_uses=0)
+    await chanid.send(f"\nI got added to server {guildname} ({guildid})")#\nHere's link to join {link}\n")
 
 @client.event
 async def on_guild_remove(guild):
@@ -88,127 +91,146 @@ async def on_guild_remove(guild):
     except:
         pass
     chanid = client.get_channel(927848602821349386)
-    await chanid.send(f"I got kicked from server {guildname} ({guildid})")
+    await chanid.send(f"\nI got kicked from server {guildname} ({guildid})\n")
 
 @client.event
 async def on_message(message):
     try:
         #print(message)
-        #if(isinstance(message.channel, discord.channel.DMChannel) and not(message.author == client.user)):
-        #    return message.channel.send("Bro. Don't DM me ok?")
-        #try:
-        username = str(message.author).split('#')[0]
-        usertag = str(message.author).split('#')[1]
-        userid = str(message.author.id)
-        user_msg = str(message.content)
-        channel = str(message.channel.name)
-        #except:
-        #    pass
+        if(message.channel.type == discord.ChannelType.private):
+            return
+        else:
+            #try:
+            username = str(message.author).split('#')[0]
+            usertag = str(message.author).split('#')[1]
+            userid = str(message.author.id)
+            user_msg = str(message.content)
+            channel = str(message.channel.name)
+            #except:
+            #    pass
 
-        # TODO: FIX "ECO-GIANT" BADGE
-        BadgesManager.Clear_Badges(7)
-        ggd = await economy.Get_Global_Data(client)
-        ggd.sort(key=economy.sort_func, reverse=True)
-        if (ggd[0]["name"] == message.guild.name):
-            members = await message.guild.fetch_members(limit=None).flatten()
-            for x in members:
-                BadgesManager.Add_Badge(7, x.id)
+            # TODO: FIX "ECO-GIANT" BADGE
+            #try:
+            #    BadgesManager.Clear_Badges(7)
+            #    ggd = await economy.Get_Global_Data(client)
+            #    ggd.sort(key=economy.sort_func, reverse=True)
+            #    if (ggd[0]["name"] == message.guild.name):
+            #        members = await message.guild.fetch_members(limit=None).flatten()
+            #        for x in members:
+            #            BadgesManager.Add_Badge(7, x.id)
+            #except:
+            #    pass
 
-        if("69" in message.content):
-            await message.reply("nice.")
+            #if("69" in message.content):
+            #    await message.reply("nice.")
 
-        if message.author == client.user:
-            pass
-        elif message.author.bot:
-            pass
+            if message.author == client.user:
+                pass
+            elif message.author.bot:
+                pass
 
-        #with open("message_log.txt", "a") as log:
-        #    log.write(f"({client.user}): " + username + "#" + usertag + " (" + userid + "): " + user_msg + " / " + message.guild.name + " -> #" + channel + "\n")
+            #with open("message_log.txt", "a") as log:
+            #    log.write(f"({client.user}): " + username + "#" + usertag + " (" + userid + "): " + user_msg + " / " + message.guild.name + " -> #" + channel + "\n")
 
-        whichone = ""
-        for panp in panproj:
-            if (config[f'token_{panp}'] == toktocheck):
-                whichone = panp
-        #print(whichone)
-        if(whichone == "normal"):
-            await pmc.CheckMsg(message)
+            whichone = ""
+            for panp in panproj:
+                if (config[f'token_{panp}'] == toktocheck):
+                    whichone = panp
+            #print(whichone)
+            if(whichone == "normal"):
+                await pmc.CheckMsg(message)
 
-            if (message.author.id in config["gbans"]):
-                return await message.channel.send("You got gbanned - sorry!")
-            else:
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "generate") or user_msg.startswith(config[f'prefix_{whichone}'] + "gen")):
-                    await generate.Cmd(message, user_msg)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "help")):
-                    await help.Cmd(message, whichone)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "devtoolkit")):
-                    await devtoolkit.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "ping")):
-                    await ping.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "guildinfo")):
-                    await guildinfo.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "memberinfo")):
-                    await memberinfo.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "heck") or user_msg.startswith("$sudo_heck")):
-                    await heck.Cmd(message, client)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "backup")):
-                    await backup.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "loadbackup")):
-                    await loadbackup.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco earn")):
-                    await economy.Cmd_Earn(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco bal")):
-                    await economy.Cmd_Bal(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco ccd")):
-                    await economy.Cmd_ClearCD(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco clear")):
-                    if(utils.is_owner_of_bot(userid)):
-                        return await message.channel.send("Only for owner.")
-                    try:
-                        await economy.Set_Money(message.guild.id, user_msg.split(" ")[2], 0)
-                        await message.channel.send("Cleared his :fries:")
-                    except:
-                        await message.channel.send("Invalid args")
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco set")):
-                    await economy.Cmd_Set_Eco(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco send")):
-                    await economy.Cmd_Send_Money(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco leaderboard")):
-                    await economy.Cmd_Leaderboard(message, client)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "serialkey")):
-                    await serialkey.Cmd(message)
-                #if(user_msg.startswith(config[f'prefix_{whichone}'] + "o1k")):
-                #    await o1k_msg.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "activity")):
-                    await activity.Cmd(message, client)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "msgcnt")):
-                    await msgcnt.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "legend")):
-                    await legend.Cmd(message, client)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "eval")):
-                    await eval.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "say")):
-                    await message.channel.send(user_msg.replace("?say ", ""))
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "support_server")):
-                    await message.channel.send("Join and you can get free 1,000 :fries: **on every server** and exclusive badge (:man_gesturing_ok:) on memberinfo\n-> https://discord.gg/4dRPUTsPza <-")
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "c4k")):
-                    await message.channel.send("Gotcha his ass")
-                    await message.channel.send("https://c.tenor.com/QA6mPKs100UAAAAC/caught-in.gif")
+                if (message.author.id in config["gbans"]):
+                    return await message.channel.send("You got gbanned - sorry!")
+                else:
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "generate") or user_msg.startswith(config[f'prefix_{whichone}'] + "gen")):
+                        await generate.Cmd(message, user_msg)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "help")):
+                        await help.Cmd(message, whichone)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "devtoolkit")):
+                        await devtoolkit.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "ping")):
+                        await ping.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "guildinfo")):
+                        await guildinfo.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "random_prntsc")):
+                        await random_prntscr.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "memberinfo")):
+                        await memberinfo.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "clear_links_db")):
+                        await clearlinkdb.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "heck") or user_msg.startswith("$sudo_heck")):
+                        await heck.Cmd(message, client)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "backup")):
+                        await backup.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "loadbackup")):
+                        await loadbackup.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco earn")):
+                        await economy.Cmd_Earn(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco bal")):
+                        await economy.Cmd_Bal(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco ccd")):
+                        await economy.Cmd_ClearCD(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco clear")):
+                        if(utils.is_owner_of_bot(userid)):
+                            return await message.channel.send("Only for owner.")
+                        try:
+                            await economy.Set_Money(message.guild.id, user_msg.split(" ")[2], 0)
+                            await message.channel.send("Cleared his :fries:")
+                        except:
+                            await message.channel.send("Invalid args")
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco set")):
+                        await economy.Cmd_Set_Eco(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco send")):
+                        await economy.Cmd_Send_Money(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco leaderboard")):
+                        await economy.Cmd_Leaderboard(message, client)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "serialkey")):
+                        await serialkey.Cmd(message)
+                    #if(user_msg.startswith(config[f'prefix_{whichone}'] + "o1k")):
+                    #    await o1k_msg.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "activity")):
+                        await activity.Cmd(message, client)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "msgcnt")):
+                        await msgcnt.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "legend")):
+                        await legend.Cmd(message, client)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "eval")):
+                        await eval.Cmd(message, client)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "say")):
+                        if("lubi" in user_msg.lower() and "dis" in user_msg.lower()):
+                            await message.channel.send("JD kuwo, spierdalaj bo banicje dostaniesz")
+                        elif("kocha" in user_msg.lower() and "dis" in user_msg.lower()):
+                            try:
+                                await message.author.ban(reason="Kochanie disa (gay moment)")
+                                await message.channel.send("Dostal banicje, o jednego \"kochanka\" disa mniej.")
+                            except:
+                                pass
+                        else:
+                            await message.channel.send(user_msg.replace("?say ", ""))
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "support_server")):
+                        await message.channel.send("Join and you can get free 1,000 :fries: **on every server** and exclusive badge (:man_gesturing_ok:) on memberinfo\n-> https://discord.gg/4dRPUTsPza <-")
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "supserver_ad")):
+                        await message.channel.send("**-------> Pan-Project Support Server <--------**\n:arrow_forward:  Do you get raided?\n:arrow_forward: Really annoyed by creating channels over and over?\n:arrow_forward: A lot of messages that offer nitro for free?\n:eye: **You are looking on solution right now!**\n:monkey_face: Pansage Bot is offering a lot of features such like:\n:white_small_square: Anti-Fishing :fish: \n:white_small_square: Scam links database with over 4,000 websites! :newspaper: \n:white_small_square: Backups :leftwards_arrow_with_hook: \n:white_small_square: Economy based on messages :speech_left: \n:white_small_square: Not only server leaderboards - but **global** leaderboards :globe_with_meridians: \n:white_small_square: Badges:military_medal: \n:white_small_square: Active developer :man_technologist: \n:white_small_square: Serial Keys to Windows products :key: \n*Remember that Piracy is no good, keys only for VM-testing*\nJoin andyou can get free 1,000 :fries: **on every server** and exclusive badge (:man_gesturing_ok:) on `?memberinfo`\n-> https://discord.gg/4dRPUTsPza <-\n\nAlso we are asking you to help us train the algorythm to prevent future scams! Send on `#🧛scam-links` channel (on support server) and we will add it to our database!")
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "c4k")):
+                        await message.channel.send("Gotcha his ass")
+                        await message.channel.send("https://c.tenor.com/QA6mPKs100UAAAAC/caught-in.gif")
 
-            #if(user_msg.startswith(config[f'prefix_{whichone}'])):
-            #    await message.delete()
-        elif(whichone == "manager"):
-            if(message.author.id in config["gbans"]):
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "help")):
-                    await helpman.Cmd(message, whichone)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "activity")):
-                    await actiman.Cmd(message, client)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "gban")):
-                    await gban.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "gunban")):
-                    await gunban.Cmd(message)
-                if(user_msg.startswith(config[f'prefix_{whichone}'] + "devtoolkit")):
-                    await dtkman.Cmd(message)
-            #print(f"bot is {whichone}")
+                #if(user_msg.startswith(config[f'prefix_{whichone}'])):
+                #    await message.delete()
+            elif(whichone == "manager"):
+                if(message.author.id in config["gbans"]):
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "help")):
+                        await helpman.Cmd(message, whichone)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "activity")):
+                        await actiman.Cmd(message, client)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "gban")):
+                        await gban.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "gunban")):
+                        await gunban.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "devtoolkit")):
+                        await dtkman.Cmd(message)
+                #print(f"bot is {whichone}")
     except Exception as ex:
         await message.channel.send(":warning: KERNEL ERROR! :warning:\nLogging off & saving to database...")
         await utils.save_error(f"Kernel ({client.user})", os.path.basename(__file__), ex)

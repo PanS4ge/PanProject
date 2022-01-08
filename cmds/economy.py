@@ -48,7 +48,7 @@ async def Get_Global_Data(client):
     file = []
     all_server_id = []
     for filefetch in glob.glob("ecojson/*.json"):
-        all_server_id.append(int(str(filefetch).replace("ecojson\\", "").replace(".json", "")))
+        all_server_id.append(str(filefetch).replace("ecojson\\", "").replace(".json", ""))
         file.append(filefetch)
     give_back_array = []
     fetched_guilds = client.guilds
@@ -74,12 +74,12 @@ async def Get_Global_Balance(message):
         except:
             pass
 
-    if (yesyes >= 100000000 and not (BadgesManager.Have_Badge(2, memid))):
-        BadgesManager.Add_Badge(2)
-    elif (yesyes >= 10000000 and not (BadgesManager.Have_Badge(1, memid))):
-        BadgesManager.Add_Badge(1)
-    elif (yesyes >= 1000000 and not (BadgesManager.Have_Badge(0, memid))):
-        BadgesManager.Add_Badge(0)
+    if (yesyes >= 10000000 and not (BadgesManager.Have_Badge(2, message.author.id))):
+        BadgesManager.Add_Badge(2, message.author.id)
+    elif (yesyes >= 1000000 and not (BadgesManager.Have_Badge(1, message.author.id))):
+        BadgesManager.Add_Badge(1, message.author.id)
+    elif (yesyes >= 100000 and not (BadgesManager.Have_Badge(0, message.author.id))):
+        BadgesManager.Add_Badge(0, message.author.id)
     return yesyes
 
 def sort_func(e):
@@ -112,7 +112,7 @@ async def Cmd_Earn(message):
                 cny.close()
         except Exception as e:
             pass
-        mon = math.ceil(random.randint(math.floor(int(cnt[f"{message.author.id}"]) / 1000), 100000 + int(cnt[f"{message.author.id}"])) * (int(cnt[f"{message.author.id}"]) / 1000))
+        mon = math.ceil(random.randint(math.floor(int(cnt[f"{message.author.id}"]) / 2500), 250 * int(cnt[f"{message.author.id}"])) * (int(cnt[f"{message.author.id}"]) / 2500))
         #print(mon)
         try:
             if (econ[str(message.author.id)] != 0):

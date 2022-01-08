@@ -53,8 +53,8 @@ async def CheckMsg(message):
 async def Count_Message(message):
     if(not(message.author.bot)):
         cnt = {}
-        monet = random.randint(1, 250)
-        if(monet == random.randint(1, 250)):
+        monet = random.randint(1, 25)
+        if(monet == random.randint(1, 25)):
             await message.reply(f"Congrats! You found {monet}:fries: laying on <#{message.channel.id}>!")
             await economy.Give_Money(message.guild.id, message.author.id, monet)
     try:
@@ -73,76 +73,93 @@ async def Count_Message(message):
         f.write(json.dumps(cnt, indent=4, sort_keys=True))
 
 async def AntiFishing(message):
-    if(message.channel.id == 927869165753229312):
-        return
+    greenflag = "It's may be safe for you."
+    yellowflag = "It might not be the safest website, but be sure to NOT give any info"
+    redflag = "If you wanted to click it, STOP IT!"
 
-    config = {}
-    with open(f"config.json", encoding='utf8') as data:
-        config = json.load(data)
+    try:
+        if (not (await utils.check_perms_if(message, message.author))):
+            return
+        if(message.channel.id == 927869165753229312):
+            return
 
-    if(message.author.id == config["id_normal"]):
-        return
-    msglink = await Get_Link_From_Msg(message)
-    if(msglink == False):
-        return
+        config = {}
+        with open(f"config.json", encoding='utf8') as data:
+            config = json.load(data)
 
-    msgscan = await message.reply("Starting scan of link...")
+        if(message.author.id == config["id_normal"]):
+            return
+        msglink = await Get_Link_From_Msg(message)
+        if(msglink == False):
+            return
 
-    with open("link.txt", "r") as lin:
-        file = lin.readlines()
-    with open("trailingslash.txt", "r") as lin:
-        file2 = lin.readlines()
+        if(len(msglink.split("/")) == 3):
+            msglink = msglink + "/s"
 
-    rdy = []
-    hgdo = []
-    beg = ["", "http://", "https://", "http://www.", "https://www."]
+        msgscan = await message.reply("Starting scan of link...")
 
-    for x in beg:
-        if(x in msglink):
-            #print(f"{x} in {msglink}")
-            msglink = msglink.replace(str(x), "")
+        with open("link.txt", "r") as lin:
+            file = lin.readlines()
+        with open("trailingslash.txt", "r") as lin:
+            file2 = lin.readlines()
 
-    msglink = str(msglink.split("/")[0]) + "/" + str(msglink.split("/")[1])
+        rdy = []
+        hgdo = []
+        beg = ["", "http://", "https://", "http://www.", "https://www."]
 
-    for website in file:
-        for trailsl in file2:
-            url = str(website).replace("\n", "") + str(trailsl).replace("\n", "")
-            per = similar(url, msglink)
-            rdy.append(per)
-            hgdo.append(per)
-    await msgscan.edit(content=f"""Starting scan of link ({msglink})\nCurrently comparing link to my database for sus variants""")
+        for x in beg:
+            if(x in msglink):
+                #print(f"{x} in {msglink}")
+                msglink = msglink.replace(str(x), "")
 
-    i = 0
-    j = 0
-    with open("malterms.txt", "r") as op:
-        for x in op.readlines():
-            if(x in str(message.content)):
-                i = i + 100
-                rdy.append(i)
-                j = j + 1
+        msglink = str(msglink.split("/")[0]) + "/" + str(msglink.split("/")[1])
 
-    per = get_num_array(rdy)
-    if(per > 0.3):
-        if(per < 0.5):
-            await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}")
-            try:
-                await message.author.kick(reason=f"Posted scam link ({msglink})")
-            except:
-                await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\n*Can't kick*")
+        for website in file:
+            for trailsl in file2:
+                url = str(website).replace("\n", "") + str(trailsl).replace("\n", "")
+                per = similar(url, msglink)
+                if(per > 0.1):
+                    rdy.append(per)
+                    hgdo.append(per)
+        await msgscan.edit(content=f"""Starting scan of link ({msglink})\nCurrently comparing link to my database for sus variants""")
+
+        i = 0
+        j = 0
+        with open("malterms.txt", "r") as op:
+            for x in op.readlines():
+                if(x in str(message.content)):
+                    i = i + 100
+                    rdy.append(i)
+                    j = j + 1
+
+        per = get_num_array(rdy)
+        #print(per)
+        if(3>2):
+            await msgscan.edit(
+                content=f"Similarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{greenflag}*")
+            if(per > 0.4):
+                await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{yellowflag}*")
+                try:
+                    await message.author.kick(reason=f"Posted scam link ({msglink})")
+                except:
+                    await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{yellowflag}*\n*Can't kick*")
+                await message.delete()
+            elif(per > 0.6):
+                await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{redflag}*")
+                try:
+                    await message.author.ban(reason=f"Posted scam link ({msglink})")
+                except:
+                    await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{redflag}*\n*Can't ban*")
+                await message.delete()
+            with open("link.txt", "r") as link1:
+                with open("trailingslash.txt", "r") as link2:
+                    if(msglink.split("/")[0] in link1.readlines() and msglink.split("/")[1] in link2.readlines()):
+                        with open("link.txt", "a") as link:
+                            link.write("\n" + msglink.split("/")[0])
+                        with open("trailingslash.txt", "a") as link:
+                            link.write("\n" + "/" + msglink.split("/")[1])
         else:
-            await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}")
-            try:
-                await message.author.ban(reason=f"Posted scam link ({msglink})")
-            except:
-                await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\n*Can't ban*")
-        with open("link.txt", "r") as link1:
-            with open("trailingslash.txt", "r") as link2:
-                if(msglink.split("/")[0] in link1.readlines() and msglink.split("/")[1] in link2.readlines()):
-                    with open("link.txt", "a") as link:
-                        link.write("\n" + msglink.split("/")[0])
-                    with open("trailingslash.txt", "a") as link:
-                        link.write("\n" + "/" + msglink.split("/")[1])
-        await message.delete()
-    else:
-        await msgscan.edit(content=f"Scanned message - Scam link possibility {math.floor(per*150)}%")
+            await msgscan.edit(content=f"Scanned message - Scam link possibility {math.floor(per*150)}%")
+    except:
+        await message.channel.send("Unable to scan link.")
 
