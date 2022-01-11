@@ -23,7 +23,7 @@ async def Cmd(message):
         for channel in message.guild.voice_channels:
             await channel.delete()
         bac = {}
-        with open(f"backup/{serverid}.json") as bu:
+        with open(f"backup/{message.guild.id}.json") as bu:
             bac = json.load(bu)
         for cat in bac['backup']:
             cate = await message.guild.create_category(name=cat['category'])

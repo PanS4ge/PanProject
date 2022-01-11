@@ -53,8 +53,8 @@ async def CheckMsg(message):
 async def Count_Message(message):
     if(not(message.author.bot)):
         cnt = {}
-        monet = random.randint(1, 25)
-        if(monet == random.randint(1, 25)):
+        monet = random.randint(1, 75)
+        if(monet == random.randint(1, 75)):
             await message.reply(f"Congrats! You found {monet}:fries: laying on <#{message.channel.id}>!")
             await economy.Give_Money(message.guild.id, message.author.id, monet)
     try:
@@ -78,8 +78,8 @@ async def AntiFishing(message):
     redflag = "If you wanted to click it, STOP IT!"
 
     try:
-        if (not (await utils.check_perms_if(message, message.author))):
-            return
+        #if (not (await utils.check_perms_if(message, message.author)) and not(utils.is_owner_of_bot(message.author.id))):
+        #    return
         if(message.channel.id == 927869165753229312):
             return
 

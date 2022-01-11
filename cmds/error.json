@@ -1,34 +1,14 @@
 {
     "errors": [
         {
+            "message": "https://cdn.discordapp.com/emojis/903686678647025697.gif?size=48&quality=lossless&size=40   siema",
+            "crashed_file": "pmc.py",
+            "error": "400 Bad Request (error code: 50035): Invalid Form Body\nIn message_reference: Unknown message"
+        },
+        {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "'DMChannel' object has no attribute 'name'"
-        },
-        {
-            "message": "?random_prntscr",
-            "crashed_file": "random_prntscr.py",
-            "error": "'NoneType' object has no attribute 'filename'"
-        },
-        {
-            "message": "?random_prntscr",
-            "crashed_file": "random_prntscr.py",
-            "error": "400 Bad Request (error code: 50006): Cannot send an empty message"
-        },
-        {
-            "message": "?random_prntsc",
-            "crashed_file": "random_prntscr.py",
-            "error": "400 Bad Request (error code: 50006): Cannot send an empty message"
-        },
-        {
-            "message": "?random_prntsc",
-            "crashed_file": "random_prntscr.py",
-            "error": "400 Bad Request (error code: 50006): Cannot send an empty message"
-        },
-        {
-            "message": "Running / Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "Concurrent call to receive() is not allowed"
+            "error": "'config_normal'"
         }
     ]
 }

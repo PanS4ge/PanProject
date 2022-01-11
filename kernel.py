@@ -1,5 +1,7 @@
+import random
 import threading
 import glob
+import time
 
 import discord
 import json
@@ -12,7 +14,8 @@ import after_invoke_cmd
 import utils, pmc
 import o1k_msg
 
-from cmds import help, devtoolkit, backup, generate, ping, serialkey, loadbackup, economy, msgcnt, heck, guildinfo, activity, legend, eval, memberinfo, clearlinkdb, random_prntscr
+from cmds import help, devtoolkit, backup, generate, ping, serialkey, mc_pfp, loadbackup, economy, msgcnt, heck, guildinfo, activity, legend, eval, memberinfo, clearlinkdb, random_prntscr, exec
+from cmds import terminal
 
 from manager import help as helpman
 from manager import activity as actiman
@@ -41,7 +44,7 @@ async def on_ready():
     DiscordComponents(client)
     await client.change_presence(activity=discord.Game(name=f"good bro"))
     print("Successfully logged in.")
-    await after_invoke_cmd.Cmd(client)
+    #await after_invoke_cmd.Daily_Poll(client)
 
 @client.event
 async def on_guild_join(guild):
@@ -61,12 +64,12 @@ async def on_guild_join(guild):
                 yee.write(json.dumps(temp))
     except:
         pass
-    try:
-        if(f"backup/{guildid}.json"):
-            with open(f"msgcount/{guildid}.json", "w") as yee:
-                yee.write(json.dumps(temp))
-    except:
-        pass
+    #try:
+    #    if(f"backup/{guildid}.json"):
+    #        with open(f"msgcount/{guildid}.json", "w") as yee:
+    #            yee.write(json.dumps(temp))
+    #except:
+    #    pass
     chanid = client.get_channel(927848602821349386)
     #link = client.create_invite(destination=guild, xkcd=True, max_age=0, max_uses=0)
     await chanid.send(f"\nI got added to server {guildname} ({guildid})")#\nHere's link to join {link}\n")
@@ -85,11 +88,11 @@ async def on_guild_remove(guild):
             os.remove(f"msgcount/{guildid}.json")
     except:
         pass
-    try:
-        if(f"backup/{guildid}.json"):
-            os.remove(f"backup/{guildid}.json")
-    except:
-        pass
+    #try:
+    #    if(f"backup/{guildid}.json"):
+    #        os.remove(f"backup/{guildid}.json")
+    #except:
+    #    pass
     chanid = client.get_channel(927848602821349386)
     await chanid.send(f"\nI got kicked from server {guildname} ({guildid})\n")
 
@@ -129,6 +132,14 @@ async def on_message(message):
             elif message.author.bot:
                 pass
 
+            if(message.channel.id == 929668126654750741 and message.content == "!d bump"):
+                if(not(BadgesManager.Have_Badge(12, message.author.id))):
+                    await message.channel.send(f"Thank you for bumping this server on disboard <@!{message.author.id}>, I see it's your first time bumping so take this ~~500~~ **1000** :fries: and badge BUMPER! Stay bumpin'")
+                    await economy.Give_Money(message.guild.id, message.author.id, 1000)
+                    BadgesManager.Add_Badge(12, message.author.id)
+                else:
+                    await message.channel.send(f"Thank you for bumping this server on disboard <@!{message.author.id}>, take this 500 :fries:! Stay bumpin'")
+                    await economy.Give_Money(message.guild.id, message.author.id, 500)
             #with open("message_log.txt", "a") as log:
             #    log.write(f"({client.user}): " + username + "#" + usertag + " (" + userid + "): " + user_msg + " / " + message.guild.name + " -> #" + channel + "\n")
 
@@ -137,6 +148,9 @@ async def on_message(message):
                 if (config[f'token_{panp}'] == toktocheck):
                     whichone = panp
             #print(whichone)
+            if (f"<@!{config[f'id_{whichone}']}>" in message.content):
+                await message.channel.send(f"My prefix is `{config[f'prefix_{whichone}']}`, start with `{config[f'prefix_{whichone}']}help`")
+
             if(whichone == "normal"):
                 await pmc.CheckMsg(message)
 
@@ -147,8 +161,12 @@ async def on_message(message):
                         await generate.Cmd(message, user_msg)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "help")):
                         await help.Cmd(message, whichone)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "exec")):
+                        await exec.Cmd(message, client)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "devtoolkit")):
                         await devtoolkit.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "mc_pfp")):
+                        await mc_pfp.Cmd(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "ping")):
                         await ping.Cmd(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "guildinfo")):
@@ -165,6 +183,8 @@ async def on_message(message):
                         await backup.Cmd(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "loadbackup")):
                         await loadbackup.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "add_bot")):
+                        await message.channel.send("Thank you for supporting my bot!\nhttps://discord.com/api/oauth2/authorize?client_id=915657093862817802&permissions=8&scope=bot")
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco earn")):
                         await economy.Cmd_Earn(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco bal")):
@@ -197,6 +217,8 @@ async def on_message(message):
                         await legend.Cmd(message, client)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "eval")):
                         await eval.Cmd(message, client)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "terminal")):
+                        await terminal.Cmd(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "say")):
                         if("lubi" in user_msg.lower() and "dis" in user_msg.lower()):
                             await message.channel.send("JD kuwo, spierdalaj bo banicje dostaniesz")
@@ -215,6 +237,24 @@ async def on_message(message):
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "c4k")):
                         await message.channel.send("Gotcha his ass")
                         await message.channel.send("https://c.tenor.com/QA6mPKs100UAAAAC/caught-in.gif")
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + 'micup')):
+                        await message.channel.send("fuck off")
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "8ball")):
+                        try:
+                            responses = ["As I see it, yes.", "Ask again later.", "Better not tell you now.",
+                                         "Cannot predict now.", "Concentrate and ask again.",
+                                         "Don’t count on it.", "It is certain.", "It is decidedly so.", "Most likely.",
+                                         "My reply is no.", "My sources say no.",
+                                         "Outlook not so good.", "Outlook good.", "Reply hazy, try again.",
+                                         "Signs point to yes.", "Very doubtful.", "Without a doubt.",
+                                         "Yes.", "Yes – definitely.", "You may rely on it."]
+                            msg8ball = await message.channel.send(f"8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: Shaking 8ball...")
+                            time.sleep(1)
+                            await msg8ball.edit(content=f"8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: 8ball is giving answer...")
+                            time.sleep(3)
+                            await msg8ball.edit(content=f"8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: **{responses[random.randint(0, len(responses))]}**")
+                        except:
+                            await message.channel.send("On what should I decide?")
 
                 #if(user_msg.startswith(config[f'prefix_{whichone}'])):
                 #    await message.delete()
@@ -241,6 +281,11 @@ async def on_button_click(interaction):
     #try:
         user = interaction.author
         guild = interaction.guild
+        for x in range(1, 5):
+            if(str(x) in interaction.component.custom_id):
+                after_invoke_cmd.Count_Votes(interaction, x)
+                await interaction.respond(content="Counted your vote (If you already counted, we won't count it)")
+
         if("Error Check" in interaction.component.label):
             await interaction.respond(content="Here you go!", embed=await errorcheck.ReturnCmd(user.id))
         if("Nuke" in interaction.component.label):
