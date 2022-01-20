@@ -1,0 +1,1 @@
+#{}add_bot - Thank you for supporting my bot!
