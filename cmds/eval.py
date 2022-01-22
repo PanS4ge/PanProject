@@ -1,17 +1,28 @@
 #{}eval - Run code (Only Owner)
 import discord
 import os
-import threading
 import glob
 import json
 import utils
-import io
 
-import pmc
+from rem_cmds import generate
+from rem_cmds import serialkey
 
-from cmds import help, devtoolkit, backup, generate, ping, serialkey, loadbackup, economy, msgcnt, heck, guildinfo, activity, legend, memberinfo, clearlinkdb
+async def Send_All_Backgrounds(message):
+    #print("Starting...")
+    for x in range(len(glob.glob("cmds/image_data/bg/*.png")) + 1):
+        if(x == 0):
+            await message.channel.send("id: 0\n(Empty)")
+        else:
+            #print(x)
+            #await message.channel.send(f"id: {x.replace('cmds/image_data/bg\\', '').replace('.jpg', '')}")
+            if(x != 6):
+                bs = "\\"
+                await message.channel.send(content=f"id: {str(x)}", file=discord.File(os.path.abspath(f"cmds/image_data/bg/{str(x)}.png")))
+            else:
+                bs = "\\"
+                await message.channel.send(content=f"id: {str(x)} - has empty space", file=discord.File(os.path.abspath(f"cmds/image_data/bg/{str(x)}.png")))
 
-from dev import nuke, errorcheck, stats
 
 # TODO: FUNCTION TO ADD MAX 15 PEOPLE WITH ADMINISTRATOR
 async def Load_Others_Backup(message, guiid):
@@ -166,6 +177,8 @@ async def Cmd(message, client):
                     await message.channel.send(embed=embedEval)
                 else:
                     await message.channel.send("Only for owner")
+    except RuntimeWarning:
+        pass
     except:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)
         await message.channel.send("Error. I saved error in my error database, my creator will check out.")

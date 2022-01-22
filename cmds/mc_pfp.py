@@ -1,4 +1,6 @@
 #{}mc_pfp (username) (background_number (0 for none)) (optional arg: starburst) - Generates you minecraft profile picture
+from json import JSONDecodeError
+
 import discord
 import os
 import requests
@@ -72,11 +74,14 @@ async def Cmd(message):
             bge.paste(sba, (0, 0), sba)
         sba = img.crop((0, 0, 1001, 1001))
         bge.paste(sba, (0, 0), sba)
+        bge.save(f"all_profiles/{name}_{bg}_{starburst}.png")
         with BytesIO() as image_binary:
             bge.save(image_binary, 'PNG')
             image_binary.seek(0)
             await msgav.edit(content="Your avatar is in message below...")
             await message.channel.send(file=discord.File(fp=image_binary, filename='image.png'))
+    except JSONDecodeError:
+        await message.channel.send("Invalid nickname - Are you sure this is *Minecraft: Java Edition* username?")
     except Exception as e:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)
         await message.channel.send("Error. I saved error in my error database, my creator will check out.")

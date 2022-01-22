@@ -3,6 +3,8 @@ import threading
 import glob
 import time
 
+import psutil
+
 import discord
 import json
 import os
@@ -14,13 +16,16 @@ import after_invoke_cmd
 import utils, pmc
 import o1k_msg
 
-from cmds import help, devtoolkit, backup, generate, ping, serialkey, mc_pfp, loadbackup, economy, msgcnt, heck, guildinfo, activity, legend, eval, memberinfo, clearlinkdb, random_prntscr, exec
+from cmds import help, devtoolkit, backup, yt_stats, ping, settings, mc_pfp, loadbackup, economy, msgcnt, heck, guildinfo, activity, legend, eval, memberinfo, clearlinkdb, random_prntscr, exec
 from cmds import terminal
 
 from manager import help as helpman
 from manager import activity as actiman
 from manager import devtoolkit as dtkman
 from manager import gban, gunban
+
+import get_message_image
+from io import BytesIO
 
 from dev import nuke, errorcheck, stats
 
@@ -37,6 +42,49 @@ with open(f"serialkey.json", encoding='utf8') as data:
 intents = discord.Intents.default()
 intents.members = True
 client = discord.Client(intents=intents)
+
+@client.event
+async def on_member_join(member):
+    welcomechan = {}
+    with open("settings/welcome_channel.json", "r") as welcom:
+        welcomechan = json.loads(welcom.read())
+    try:
+        try:
+            if(welcomechan[str(member.guild.id)]["image_welcome"].lower() == "true"):
+                with BytesIO() as image_binary:
+                    get_message_image.get_welcome(member).save(image_binary, 'PNG')
+                    image_binary.seek(0)
+                    await client.get_channel(int(welcomechan[str(member.guild.id)]["join_channel"])).send(content=f"<@!{member.id}>", file=discord.File(fp=image_binary, filename='image.png'))
+            else:
+                await client.get_channel(int(welcomechan[str(member.guild.id)]["join_channel"])).send(f'Welcome <@!{member.id}> on the server!')
+        except KeyError:
+            await client.get_channel(int(welcomechan[str(member.guild.id)]["join_channel"])).send(f'Welcome <@!{member.id}> on the server!')
+        if(member.guild.id == 925744274706939956):
+            role = discord.utils.get(client.get_guild(925744274706939956).roles, id=927854767894593556)
+            await member.add_roles(role)
+    except:
+        return
+
+@client.event
+async def on_member_leave(member):
+    welcomechan = {}
+    with open("settings/welcome_channel.json", "r") as welcom:
+        welcomechan = json.loads(welcom.read())
+    try:
+        try:
+            if(welcomechan[str(member.guild.id)]["image_leave"].lower() == "true"):
+                with BytesIO() as image_binary:
+                    get_message_image.get_leave(member).save(image_binary, 'PNG')
+                    image_binary.seek(0)
+                    await client.get_channel(int(welcomechan[str(member.guild.id)]["leave_channel"])).send(content=f"<@!{member.id}>", file=discord.File(fp=image_binary, filename='image.png'))
+            else:
+                await client.get_channel(int(welcomechan[str(member.guild.id)]["leave_channel"])).send(f'<@!{member.name}> left us')
+        except KeyError:
+            await client.get_channel(int(welcomechan[str(member.guild.id)]["leave_channel"])).send(f'<@!{member.name}> left us')
+    except:
+        return
+
+
 
 @client.event
 async def on_ready():
@@ -99,6 +147,7 @@ async def on_guild_remove(guild):
 @client.event
 async def on_message(message):
     try:
+        #print(psutil.virtual_memory().used)
         #print(message)
         if(message.channel.type == discord.ChannelType.private):
             return
@@ -152,13 +201,12 @@ async def on_message(message):
                 await message.channel.send(f"My prefix is `{config[f'prefix_{whichone}']}`, start with `{config[f'prefix_{whichone}']}help`")
 
             if(whichone == "normal"):
-                await pmc.CheckMsg(message)
 
-                if (message.author.id in config["gbans"]):
-                    return await message.channel.send("You got gbanned - sorry!")
-                else:
-                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "generate") or user_msg.startswith(config[f'prefix_{whichone}'] + "gen")):
-                        await generate.Cmd(message, user_msg)
+                #if (message.author.id in config["gbans"]):
+                #    return await message.channel.send("You got gbanned - sorry!")
+                #else:
+                    #if(user_msg.startswith(config[f'prefix_{whichone}'] + "generate") or user_msg.startswith(config[f'prefix_{whichone}'] + "gen")):
+                    #    await generate.Cmd(message, user_msg)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "help")):
                         await help.Cmd(message, whichone)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "exec")):
@@ -173,6 +221,8 @@ async def on_message(message):
                         await guildinfo.Cmd(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "random_prntsc")):
                         await random_prntscr.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "yt_stats")):
+                        await yt_stats.Cmd(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "memberinfo")):
                         await memberinfo.Cmd(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "clear_links_db")):
@@ -205,14 +255,20 @@ async def on_message(message):
                         await economy.Cmd_Send_Money(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "eco leaderboard")):
                         await economy.Cmd_Leaderboard(message, client)
-                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "serialkey")):
-                        await serialkey.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "settings")):
+                        #if(utils.is_owner_of_bot(message.author.id)):
+                            await settings.Cmd(message, client)
+                    #if(user_msg.startswith(config[f'prefix_{whichone}'] + "serialkey")):
+                    #    await serialkey.Cmd(message)
                     #if(user_msg.startswith(config[f'prefix_{whichone}'] + "o1k")):
                     #    await o1k_msg.Cmd(message)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "activity")):
                         await activity.Cmd(message, client)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "msgcnt")):
                         await msgcnt.Cmd(message)
+                    if(user_msg.startswith(config[f'prefix_{whichone}'] + "to_fix")):
+                        tofixmsg = await client.get_channel(928629647250423818).fetch_message(928629856332283915)
+                        await message.channel.send(f"~ Fetched from my support server (?support_server)\n\n{tofixmsg.content}\n*sent by {tofixmsg.author}*")
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "legend")):
                         await legend.Cmd(message, client)
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "eval")):
@@ -228,6 +284,10 @@ async def on_message(message):
                                 await message.channel.send("Dostal banicje, o jednego \"kochanka\" disa mniej.")
                             except:
                                 pass
+                        elif("1 2 7 3" in user_msg.lower()):
+                            await message.channel.send("... down to Rockefeller Street\nLife is marchin' on do you feel that\n1273, down to Rockefeller Street\nEverything is more than surreal (than surreal)")
+                        elif("21:37" in user_msg.lower()):
+                            await message.channel.send("Pan kiedyś stanął nad brzegiem,\nSzukał ludzi gotowych pójść za Nim;\nBy łowić serca\nSłów Bożych prawdą.\n\nO Panieeee, to Ty na mnie spojrzałeś,\nTwoje usta dziś wyrzekły me imię.\nSwoją barkę pozostawiam na brzegu,\nRazem z Tobą nowy zacznę dziś łów.")
                         else:
                             await message.channel.send(user_msg.replace("?say ", ""))
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "support_server")):
@@ -258,6 +318,7 @@ async def on_message(message):
 
                 #if(user_msg.startswith(config[f'prefix_{whichone}'])):
                 #    await message.delete()
+                        await pmc.CheckMsg(message)
             elif(whichone == "manager"):
                 if(message.author.id in config["gbans"]):
                     if(user_msg.startswith(config[f'prefix_{whichone}'] + "help")):
@@ -273,7 +334,7 @@ async def on_message(message):
                 #print(f"bot is {whichone}")
     except Exception as ex:
         await message.channel.send(":warning: KERNEL ERROR! :warning:\nLogging off & saving to database...")
-        await utils.save_error(f"Kernel ({client.user})", os.path.basename(__file__), ex)
+        await utils.save_error(f"Kernel ({client.user}) / Crashed by {message.author.name} ({message.author.id})", os.path.basename(__file__), ex)
         exit(ex)
 
 @client.event
@@ -312,13 +373,13 @@ async def on_button_click(interaction):
                 else:
                     await interaction.respond(content="Bruh, you already claimed it!")
 
-        lele = interaction.component.label.replace("🔑", "")
-        if(lele in serialkey.SysKeys):
-            embedVar = discord.Embed(title=f"Keys for {lele}", description="for Pansage Bot.", color=0x00ffff)
-            for e in keys["Win"]:
-                if(e["System"].startswith(lele)):
-                    embedVar.add_field(name=e["System"], value=e["SysKey"], inline=False)
-            await interaction.respond(content="Here you go!", embed=embedVar)
+        #lele = interaction.component.label.replace("🔑", "")
+        #if(lele in serialkey.SysKeys):
+        #    embedVar = discord.Embed(title=f"Keys for {lele}", description="for Pansage Bot.", color=0x00ffff)
+        #    for e in keys["Win"]:
+        #        if(e["System"].startswith(lele)):
+        #            embedVar.add_field(name=e["System"], value=e["SysKey"], inline=False)
+        #    await interaction.respond(content="Here you go!", embed=embedVar)
     #except Exception as exc:
     #    await utils.save_error(f"Btn Selection / Kernel ({client.user})", os.path.basename(__file__), exc)
     #    await interaction.respond(content="Error. I saved error in my error database, my creator will check out.")

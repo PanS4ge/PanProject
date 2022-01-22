@@ -1,17 +1,8 @@
 #{}exec - Run code (Only Owner)
 import discord
 import os
-import threading
-import glob
-import json
 import utils
-import io
 
-import pmc
-
-from cmds import help, devtoolkit, backup, generate, ping, serialkey, loadbackup, economy, msgcnt, heck, guildinfo, activity, legend, memberinfo, clearlinkdb
-
-from dev import nuke, errorcheck, stats
 
 async def Cmd(message, client):
     try:

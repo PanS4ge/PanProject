@@ -77,6 +77,12 @@ async def AntiFishing(message):
     yellowflag = "It might not be the safest website, but be sure to NOT give any info"
     redflag = "If you wanted to click it, STOP IT!"
 
+    antifish = {}
+    with open("settings/dont_scan_links.json", "r") as welcom:
+        antifish = json.loads(welcom.read())
+    if(str(message.channel.id) in antifish):
+        return
+
     try:
         #if (not (await utils.check_perms_if(message, message.author)) and not(utils.is_owner_of_bot(message.author.id))):
         #    return

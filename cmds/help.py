@@ -27,9 +27,9 @@ async def Cmd(message, botvar):
                 t = t.replace("{HASH}", "#")
                 if("||" in t):
                     for c in t.split("||"):
-                        embedVar.add_field(name=c.split("-")[0], value=c.split("-")[1], inline=False)
+                        embedVar.add_field(name=c.split("-")[0], value=c.split("-")[1], inline=True)
                 else:
-                    embedVar.add_field(name=t.split("-")[0], value=t.split("-")[1], inline=False)
+                    embedVar.add_field(name=t.split("-")[0], value=t.split("-")[1], inline=True)
         await message.channel.send(embed=embedVar)
     except Exception as e:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)

@@ -1,2 +1,2 @@
-#{}say - Says what user wants||{}add_bot - Thank you for supporting my bot!||{}8ball (QUESTION) - Ask 8ball about your question...
+#{}say - Says what user wants
 # FILE ONLY FOR HELP COMMAND!

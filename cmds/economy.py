@@ -1,4 +1,4 @@
-#{}eco earn - Earn some :fries: in PanProject ecojson!||{}eco bal - Check your :fries: balance in PanProject ecojson||{}eco ccd - Remove cooldown (only for owners)||{}eco set - Set :fries: for user (only for owners)||{}eco send - Give :fries: for user||{}eco leaderboard - Check who has the most :fries: in server (arg. "global" check which server has the most :fries: globally)
+#{}eco earn - Earn some :fries: in PanProject economy!||{}eco bal - Check your :fries: balance in PanProject economy||{}eco ccd - Remove cooldown (only for owners)||{}eco set - Set :fries: for user (only for owners)||{}eco send - Give :fries: for user||{}eco leaderboard - Check who has the most :fries: in server (arg. "global" check which server has the most :fries: globally)
 import os
 import glob
 import discord

@@ -1,14 +1,19 @@
 {
     "errors": [
         {
-            "message": "https://cdn.discordapp.com/emojis/903686678647025697.gif?size=48&quality=lossless&size=40   siema",
-            "crashed_file": "pmc.py",
-            "error": "400 Bad Request (error code: 50035): Invalid Form Body\nIn message_reference: Unknown message"
+            "message": "Welcome pic generator",
+            "crashed_file": "get_message_image.py",
+            "error": "'Member' object has no attribute 'displayAvatarURL'"
         },
         {
             "message": "Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "'config_normal'"
+            "error": "'str' object has no attribute 'last_message_id'"
+        },
+        {
+            "message": "Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "404 Not Found (error code: 10008): Unknown Message"
         }
     ]
 }
