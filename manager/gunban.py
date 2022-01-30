@@ -1,4 +1,4 @@
-#{}gunban - global unban this user from using the bot (Only owner)
+#{}gunban - global unban this user from using the bot (Only dev)
 import glob
 import json
 import os

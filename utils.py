@@ -8,6 +8,13 @@ with open(f"config.json", encoding='utf8') as data:
 def is_owner_of_bot(memid):
     return memid in config['owners']
 
+def has_permission(member : discord.member, perm):
+    role = member.top_role
+    if(role.permissions.administrator):
+        return True
+    else:
+        return getattr(role.permissions, perm)
+
 async def save_error(msg, file, ex):
     with open('cmds/error.json', 'r', encoding='utf-8') as f:
         err = json.load(f)

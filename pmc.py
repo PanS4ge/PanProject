@@ -9,11 +9,19 @@ import json
 
 from difflib import SequenceMatcher
 
-from cmds import economy
+from cmds.economy import eco
 
 import discord
 
 import utils
+
+language = {}
+with open(f"language_files/english.json", encoding='utf8') as data:
+    language = json.load(data)
+
+serverlang = {}
+with open(f"language_server.json", encoding='utf8') as data:
+    serverlang = json.load(data)
 
 async def Get_Link_From_Msg(message):
     yes = str(message.content)
@@ -48,15 +56,15 @@ async def CheckMsg(message):
         await Count_Message(message)
     except Exception as e:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)
-        await message.channel.send("Error. I saved error in my error database, my creator will check out.")
+        await message.channel.send(language[serverlang[str(message.guild.id)]]["global"]['error_save'])
 
 async def Count_Message(message):
     if(not(message.author.bot)):
         cnt = {}
         monet = random.randint(1, 75)
         if(monet == random.randint(1, 75)):
-            await message.reply(f"Congrats! You found {monet}:fries: laying on <#{message.channel.id}>!")
-            await economy.Give_Money(message.guild.id, message.author.id, monet)
+            await message.reply(language[serverlang[str(message.guild.id)]]["pmc_CountMsg"]['Found_Money'].replace("{monet}", monet).replace("{message.channel.id}", message.channel.id))
+            await eco.Give_Money(message.guild.id, message.author.id, monet)
     try:
         with open(f"msgcount/{str(message.guild.id)}.json", "r") as cny:
             cnt = json.loads(cny.read())
@@ -73,9 +81,9 @@ async def Count_Message(message):
         f.write(json.dumps(cnt, indent=4, sort_keys=True))
 
 async def AntiFishing(message):
-    greenflag = "It's may be safe for you."
-    yellowflag = "It might not be the safest website, but be sure to NOT give any info"
-    redflag = "If you wanted to click it, STOP IT!"
+    greenflag = language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['greenflag']
+    yellowflag = language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['yellowflag']
+    redflag = language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['redflag']
 
     antifish = {}
     with open("settings/dont_scan_links.json", "r") as welcom:
@@ -102,7 +110,7 @@ async def AntiFishing(message):
         if(len(msglink.split("/")) == 3):
             msglink = msglink + "/s"
 
-        msgscan = await message.reply("Starting scan of link...")
+        msgscan = await message.reply(language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['start_scan'])
 
         with open("link.txt", "r") as lin:
             file = lin.readlines()
@@ -127,7 +135,7 @@ async def AntiFishing(message):
                 if(per > 0.1):
                     rdy.append(per)
                     hgdo.append(per)
-        await msgscan.edit(content=f"""Starting scan of link ({msglink})\nCurrently comparing link to my database for sus variants""")
+        await msgscan.edit(content=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['info_scan'].replace("{msglink}", msglink))
 
         i = 0
         j = 0
@@ -142,20 +150,20 @@ async def AntiFishing(message):
         #print(per)
         if(3>2):
             await msgscan.edit(
-                content=f"Similarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{greenflag}*")
+                content=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['greenflag_end'].replace("{math.floor(per * 150)}", math.floor(per * 150)).replace("{j}", j).replace("{greenflag}", greenflag))
             if(per > 0.4):
-                await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{yellowflag}*")
+                await msgscan.edit(content=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['yellowflag_end'].replace("{math.floor(per * 150)}", math.floor(per * 150)).replace("{j}", j).replace("{yellowflag}", yellowflag))
                 try:
-                    await message.author.kick(reason=f"Posted scam link ({msglink})")
+                    await message.author.kick(reason=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['scam_link_reason'].replace("{msglink}", msglink))
                 except:
-                    await msgscan.edit(content=f"Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{yellowflag}*\n*Can't kick*")
+                    await msgscan.edit(content=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['yellowflag_end'].replace("{math.floor(per * 150)}", math.floor(per * 150)).replace("{j}", j).replace("{yellowflag}", yellowflag) + language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['cant_kick'])
                 await message.delete()
             elif(per > 0.6):
-                await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{redflag}*")
+                await msgscan.edit(content=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['redflag_end'].replace("{math.floor(per * 150)}", math.floor(per * 150)).replace("{j}", j).replace("{redflag}", redflag))
                 try:
-                    await message.author.ban(reason=f"Posted scam link ({msglink})")
+                    await message.author.kick(reason=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['scam_link_reason'].replace("{msglink}", msglink))
                 except:
-                    await msgscan.edit(content=f"Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{redflag}*\n*Can't ban*")
+                    await msgscan.edit(content=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['redflag_end'].replace("{math.floor(per * 150)}", math.floor(per * 150)).replace("{j}", j).replace("{redflag}", redflag) + language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['cant_ban'])
                 await message.delete()
             with open("link.txt", "r") as link1:
                 with open("trailingslash.txt", "r") as link2:
@@ -165,7 +173,7 @@ async def AntiFishing(message):
                         with open("trailingslash.txt", "a") as link:
                             link.write("\n" + "/" + msglink.split("/")[1])
         else:
-            await msgscan.edit(content=f"Scanned message - Scam link possibility {math.floor(per*150)}%")
+            await msgscan.edit(content=language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['unknown_end'].replace("{math.floor(per * 150)}", math.floor(per * 150)))
     except:
-        await message.channel.send("Unable to scan link.")
+        await message.channel.send(language[serverlang[str(message.guild.id)]]["pmc_AntiFish"]['error'])
 

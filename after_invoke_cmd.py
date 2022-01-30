@@ -5,7 +5,7 @@ import random
 
 import asyncio
 
-from cmds import economy
+from cmds.economy import eco
 
 from discord_components import DiscordComponents
 from discord_components import Component
@@ -33,7 +33,7 @@ def Count_Votes(inter, cnt):
             four = four + 1
         if(cnt == 5):
             five = five + 1
-        economy.Give_Money(inter.guild.id, inter.author.id, 20)
+        eco.Give_Money(inter.guild.id, inter.author.id, 20)
         print(str(cnt))
         votedusers.append(inter.author.id)
 
