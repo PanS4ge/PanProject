@@ -9,9 +9,12 @@ import asyncio
 
 from discord_components import DiscordComponents, Button, ButtonStyle
 
-from cmds import devtoolkit
+from dev import errorcheck, stats
+from cmds.dev import devtoolkit
 
-from dev import nuke, errorcheck, stats
+from doggo import dog
+
+#from rickroll import main
 
 import os
 import json
@@ -31,10 +34,10 @@ async def on_ready():
     print("Successfully logged in.")
     if(config["autorun"] == "True"):
         await kernel.Open_Bot_Kernel(config['token_normal'])
-        botseys[0] = 1
+        #botseys[0] = 1
         #await kernel.Open_Bot_Kernel(config['token_premium'])
         #botseys[1] = 1
-        #kernel.Open_Bot_Kernel(config['token_manager'])
+        #await kernel.Open_Bot_Kernel(config['token_manager'])
         #botseys[2] = 1
 
 @client.event
@@ -54,9 +57,15 @@ async def on_message(message):
         if not utils.is_owner_of_bot(message.author.id):
             return
 
+       # if(user_msg.startswith(config['prefix_runner'] + "rrick")):
+       #     await main.Open_Bot_Kernel()
+
+        if(user_msg.startswith(config['prefix_runner'] + "doggo")):
+            await dog.Open_Bot_Kernel()
+
         if(user_msg.startswith(config['prefix_runner'] + "run")):
             embedVar = discord.Embed(title="Runner", description="for Pansage Bot.", color=0xff0000)
-            embedVar.add_field(name="Select bot to open", value="With buttons below, remember only owner can.", inline=False)
+            embedVar.add_field(name="Select bot to open", value="With buttons below, remember only dev can.", inline=False)
             ar = [[]]
             if(botseys[0] == 0):
                 ar[0].append(Button(style=ButtonStyle.green, label=config['name_normal'], custom_id="zeroon"))
@@ -222,3 +231,4 @@ async def on_button_click(interaction):
         await interaction.respond(content="Error. I saved error in my error database, my creator will check out.")
 
 client.run(config['id_runner'])
+#client.run(config['beta_runner'])

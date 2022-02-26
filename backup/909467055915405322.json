@@ -1,0 +1,58 @@
+{
+    "backup": [
+        {
+            "category": "\u2550\u2550\u2550\u2550 | Introduction | \u2550\u2550\u2550\u2550",
+            "text": [
+                "\u2726\u250asocials",
+                "\u2726\u250arules",
+                "\u2726\u250apromote-us",
+                "\u2726\u250asponsors",
+                "\u2726\u250aabout-alovel",
+                "self-roles"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2550\u2550\u2550\u2550 | Information | \u2550\u2550\u2550\u2550",
+            "text": [
+                "\u2726\u250anews",
+                "\u2726\u250aupdates",
+                "\u2726\u250agiveaways",
+                "\u2726\u250asocial-feeds",
+                "\u2726\u250apartners",
+                "\u2726\u250aassets"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2550\u2550\u2550\u2550 | Community | \u2550\u2550\u2550\u2550",
+            "text": [
+                "\u2726\u250acommunity-polls",
+                "\u2726\u250alounge",
+                "\u2726\u250aself-promote",
+                "\u2726\u250abot-commands",
+                "\u2726\u250amemes"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2550\u2550\u2550\u2550 | Boosters | \u2550\u2550\u2550\u2550",
+            "text": [
+                "\u2726\u250abooster-perks",
+                "\u2726\u250aboosters",
+                "\u2726\u250abooster-lounge",
+                "\u2726\u250abooster-promo"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2550\u2550\u2550\u2550 | Submissions | \u2550\u2550\u2550\u2550",
+            "text": [
+                "\u2726\u250astaff-applications",
+                "\u2726\u250arc-submissions",
+                "\u2726\u250afx-submissions"
+            ],
+            "vc": []
+        }
+    ]
+}

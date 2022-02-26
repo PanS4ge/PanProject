@@ -1,0 +1,60 @@
+{
+    "backup": [
+        {
+            "category": "---------------Hello---------------",
+            "text": [
+                "\ud83d\udcdc-\u00a6-rules",
+                "\ud83d\udd30\u00a6-verification",
+                "\ud83e\udd17-\u00a6-lobby"
+            ],
+            "vc": []
+        },
+        {
+            "category": "---------------Main---------------",
+            "text": [
+                "\u2728-\u00a6-updates",
+                "\ud83d\udce2-\u00a6-announcements",
+                "\ud83d\udce2-\u00a6-announcements-discord",
+                "\u26a1\u00a6-events",
+                "\u2328bugs"
+            ],
+            "vc": []
+        },
+        {
+            "category": "---------------Text Channels---------------",
+            "text": [
+                "\ud83d\udcc4-\u00a6-general",
+                "\ud83d\udcdfcommands",
+                "\ud83d\udca2spamchat",
+                "support"
+            ],
+            "vc": []
+        },
+        {
+            "category": "---------------Voice Channels---------------",
+            "text": [],
+            "vc": [
+                "General",
+                "general #2",
+                "afk"
+            ]
+        },
+        {
+            "category": "Administration",
+            "text": [
+                "\ud83d\udce2-\u00a6-announcements-administration",
+                "chat-administration"
+            ],
+            "vc": [
+                "voice"
+            ]
+        },
+        {
+            "category": "logs",
+            "text": [
+                "logs-g"
+            ],
+            "vc": []
+        }
+    ]
+}

@@ -1,0 +1,103 @@
+{
+    "backup": [
+        {
+            "category": "[\ud83c\udf0d] \u25aa INFOS & NEUIGKEITEN \u30c3",
+            "text": [
+                "\u2502\ud83d\udc4b\u30fbwillkommen",
+                "\u2502\ud83d\udcd5\u30fbregelwerk",
+                "\u2502\ud83d\udd2e\u30fbserver-boost",
+                "\u2502\ud83c\udf7b\u30fblevel-system",
+                "\u2502\ud83d\ude80\u30fbserver-events",
+                "\u2502\ud83c\udfad\u30fbrollenverteilung",
+                "\u2502\ud83c\udf81\u30fbgewinnspiele",
+                "\u2502\ud83d\udca5\u30fbeure-werbung"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83c\udfad] \u25aa UNSERE COMMUNITY \u30c3",
+            "text": [
+                "\u2502\ud83d\udcac\u30fbschreibecke",
+                "\u2502\ud83c\udf0d\u30fbglobal-chat",
+                "\u2502\ud83e\udd33\u30fbvorstellungen",
+                "\u2502\ud83d\udd0e\u30fbserver-ideen",
+                "\u2502\u2b50\u30fbserver-feedback",
+                "\u2502\ud83e\udd16\u30fbbots-verwenden",
+                "\u2502\ud83d\udcf8\u30fbbilder-und-videos"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83d\udd0a] \u25aa DIE SPRACH-KAN\u00c4LE \u30c3",
+            "text": [],
+            "vc": [
+                "\ud83d\udc65\u3022TREFFPUNKT",
+                "\ud83d\udc65\u3022TREFFPUNKT \u00b2",
+                "\ud83c\udfb6\u302224/7 MUSIK",
+                "\ud83d\ude34 \u3022AFK BEREICH"
+            ]
+        },
+        {
+            "category": "[\ud83c\udfa8] \u25aa BIBILIOTHEK \u30c3",
+            "text": [
+                "\u2502\ud83d\udcc1\u30fbdesign-vorlagen",
+                "\u2502\ud83d\udcc1\u30fbserver-vorlagen",
+                "\u2502\ud83d\uded2\u30fbbestellen",
+                "\u2502\ud83d\udcec\u30fbfeedback"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83c\udf0d] \u25aa PARTNER & WERBUNG \u30c3",
+            "text": [
+                "\u2502\ud83e\udd1d\u30fbpartner-werbung",
+                "\u2502\ud83e\udd1d\u30fbpartner-werbung-2"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udea8 \u00d7 TEAMBEREICH",
+            "text": [
+                "\u2502\ud83d\udea8\u30fbstaff-guide",
+                "\u2502\ud83d\udcf0\u30fbteam-news",
+                "\u2502\ud83d\udcac\u30fbteam-privatchat",
+                "\u2502\ud83d\udc65\u30fbserver-team",
+                "\u2502\ud83c\udf82\u30fbgeburtstage",
+                "\u2502\ud83d\udc52\u30fbserver-rollen",
+                "\u2502\ud83e\udd16\u30fbteam-commands",
+                "\u2502\ud83d\udccc\u30fbteam-aufgaben",
+                "\u2502\ud83d\udca5\u30fbbestrafungen"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83c\udf20] \u25aa TICKETS & SUPPORT \u30c3",
+            "text": [
+                "\u2502\ud83d\udcac\u30fbteam-privatchat",
+                "\u2502\ud83e\udd16\u30fbteam-commands",
+                "\u2502\ud83d\ude91\u30fbmodmail-info",
+                "\u2502\ud83d\udcbe\u30fbmodmail-logs"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udea8 \u00d7 SERVER-LOGS",
+            "text": [
+                "\u2502\ud83d\udcbe\u30fblogs",
+                "\u2502\ud83d\udcbe\u30fbmember-log",
+                "\u2502\ud83d\udcbe\u30fbserver-log",
+                "\u2502\ud83d\udcbe\u30fbmessage-log",
+                "\u2502\ud83d\udcbe\u30fbvoice-log",
+                "\u2502\ud83d\udcbe\u30fbjoinleave-log"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83d\udcfa] \u25aa UNTERHALTUNG \u30c3",
+            "text": [
+                "\u2502\ud83d\udcb8\u30fbgratis-spiele"
+            ],
+            "vc": []
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-#{}gban - global ban this user from using the bot (doesn't apply to anti-fishing) (Only owner)
+#{}gban - global ban this user from using the bot (doesn't apply to anti-fishing) (Only dev)
 import glob
 import json
 import os

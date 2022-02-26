@@ -1,0 +1,115 @@
+{
+    "backup": [
+        {
+            "category": "\u25ac\u25ac\u25ac\u25fe\ud835\udddf\ud835\udde2\ud835\uddd5\ud835\uddd5\ud835\uddec\u25fe\u25ac\u25ac\u25ac",
+            "text": [
+                "\u300e\ud83d\udeec\u300fprzyloty",
+                "\u300e\ud83d\udeec\u300fodloty",
+                "\u300e\u2b06\u300fzaproszenia",
+                "\u300e\ud83d\udd10\u300flevele"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u25ac\u25ac\u25ac\u25fe\ud835\udde6\ud835\udde7\ud835\uddd4\ud835\udde7\ud835\uddec\ud835\udde6\ud835\udde7\ud835\uddec\ud835\uddde\ud835\udddc\u25fe\u25ac\u25ac\u25ac",
+            "text": [],
+            "vc": [
+                "I\ud83d\udc65czlonkowie:21",
+                "I\ud83d\udfe2\ud835\uddfc\ud835\uddfb\ud835\uddf9\ud835\uddf6\ud835\uddfb\ud835\uddf2:5",
+                "I\ud83c\udf34data:10.01.2022",
+                "I\ud83d\udc7fbany:2",
+                "I\ud83e\udde4nowy:Pansage Bot"
+            ]
+        },
+        {
+            "category": "\u25ac\u25ac\u25ac\u25feINFORMACYJNE \u25fe\u25ac\u25ac\u25ac",
+            "text": [
+                "\u2757\u250bregulamin",
+                "\ud83d\udd14\u250bog\u0142oszenia",
+                "\ud83d\udc9c\u250bboosterzy",
+                "\ud83c\udf80\u250bsocial_media",
+                "\u270d\u250bwymagania_rang",
+                "\ud83d\udcdb\u250bmodlog",
+                "\u2665\u250bawanse",
+                "\ud83d\udc94\u250bdegrady"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u25ac\u25ac\u25ac\u25feSTREFA OGOLNA\u25fe\u25ac\u25ac\u25ac",
+            "text": [
+                "\ud83d\udcac\u250bogolny",
+                "\ud83e\udd23\u250bmemy",
+                "\ud83d\udd22\u250bliczonko",
+                "\ud83c\udfae\u250bszukam_gracza",
+                "\ud83e\udd16\u250bkomendy",
+                "\u2764\u250bocen-nasz-serwer",
+                "\ud83c\udf89\u250bgiveaway",
+                "\ud83d\udc99\u250brandeczki"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u25ac\u25ac\u25ac\u25feWSP\u00d3\u0141PRACE \u25fe\u25ac\u25ac\u25ac",
+            "text": [
+                "\ud83d\udc65\u250bwsp\u00f3\u0142prace",
+                "\ud83d\udd27\u250bwymagania"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u25ac\u25ac\u25ac\u25feSTREFA ADMINISTRACJI\u25fe\u25ac\u25ac\u25ac",
+            "text": [
+                "\ud83d\udc51\u250bczat-administracji"
+            ],
+            "vc": [
+                "\ud83d\udc95\u250bglosowy",
+                "\u26a1\u250bmam sprawe"
+            ]
+        },
+        {
+            "category": "\u25ac\u25ac\u25ac\u25fe G\u0141OSOWE \u25fe\u25ac\u25ac\u25ac",
+            "text": [],
+            "vc": [
+                "\ud83c\udf8a\u250bglosowy",
+                "\ud83d\udc99\u250brandeczki",
+                "\ud83d\udc99\u250brandeczki#2",
+                "\ud83d\udc99\u250brandeczki#3"
+            ]
+        },
+        {
+            "category": "\u268c \u255a \u2500< MAX2 >\u2500 \u2557 \u268c",
+            "text": [],
+            "vc": [
+                "\ud83c\udfa4\u250bMax 2",
+                "\ud83c\udfa4\u250bMax 2",
+                "\ud83c\udfa4\u250bMax 2"
+            ]
+        },
+        {
+            "category": "\u268c \u255a \u2500< MAX3 >\u2500 \u2557 \u268c",
+            "text": [],
+            "vc": [
+                "\ud83c\udfa7\u250bMax 3",
+                "\ud83c\udfa7\u250bMax 3",
+                "\ud83c\udfa7\u250bMax 3"
+            ]
+        },
+        {
+            "category": "\u268c \u255a \u2500< MAX5 >\u2500 \u2557 \u268c",
+            "text": [],
+            "vc": [
+                "\ud83d\udd17\u250bMax 5",
+                "\ud83d\udd17\u250bMax 5",
+                "\ud83d\udd17\u250bMax 5"
+            ]
+        },
+        {
+            "category": "\u25ac\u25ac\u25ac\u25festrefa afk\u25fe\u25ac\u25ac\u25ac",
+            "text": [],
+            "vc": [
+                "\ud83d\ude34\u250bafk"
+            ]
+        }
+    ]
+}

@@ -1,19 +1,214 @@
 {
     "errors": [
         {
-            "message": "Welcome pic generator",
-            "crashed_file": "get_message_image.py",
-            "error": "'Member' object has no attribute 'displayAvatarURL'"
+            "message": "?mc_pfp ZUBER_PLAYS 0",
+            "crashed_file": "mc_pfp.py",
+            "error": "[Errno 2] No such file or directory: 'cmds/fun/image_data/Template.png'"
         },
         {
-            "message": "Kernel (Pansage Bot#1885)",
-            "crashed_file": "kernel.py",
-            "error": "'str' object has no attribute 'last_message_id'"
+            "message": "?heck <@!834584846122221579>",
+            "crashed_file": "heck.py",
+            "error": "list index out of range"
         },
         {
-            "message": "Kernel (Pansage Bot#1885)",
+            "message": "?heck Zastepca_wlasciciela Wieszak",
+            "crashed_file": "heck.py",
+            "error": "403 Forbidden (error code: 50001): Missing Access"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
             "crashed_file": "kernel.py",
-            "error": "404 Not Found (error code: 10008): Unknown Message"
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "?loadbackup",
+            "crashed_file": "loadbackup.py",
+            "error": "400 Bad Request (error code: 50074): Cannot delete a channel required for community servers"
+        },
+        {
+            "message": "?loadbackup",
+            "crashed_file": "loadbackup.py",
+            "error": "400 Bad Request (error code: 50074): Cannot delete a channel required for community servers"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Btn Selection / Runner Kernel",
+            "crashed_file": "runner.py",
+            "error": "name 'mess' is not defined"
+        },
+        {
+            "message": "?calc 6:2(2+1)",
+            "crashed_file": "calc.py",
+            "error": "invalid syntax (<string>, line 1)"
+        },
+        {
+            "message": "?loadbackup injected",
+            "crashed_file": "loadbackup.py",
+            "error": "400 Bad Request (error code: 50074): Cannot delete a channel required for community servers"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "?eco leaderboard",
+            "crashed_file": "eco.py",
+            "error": "'for'"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
+        },
+        {
+            "message": "Running / Kernel (Pansage Bot#1885)",
+            "crashed_file": "kernel.py",
+            "error": "Concurrent call to receive() is not allowed"
         }
     ]
 }

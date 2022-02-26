@@ -1,0 +1,165 @@
+{
+    "backup": [
+        {
+            "category": "[\ud83d\udcca\ud83d\udcc3]__Status Serwera",
+            "text": [],
+            "vc": [
+                "\ud83d\udcc6\u2502Data: 07.02.2022",
+                "\ud83e\uddd1\u2502Cz\u0142onkowie: 82",
+                "\u2705\u2502Online: 36",
+                "\ud83d\udcaf\u2502Rekord Online: 47"
+            ]
+        },
+        {
+            "category": "[\ud83d\udce3\ud83d\udccd]__Wa\u017cne",
+            "text": [
+                "\ud83d\udcc2\u2502informacje",
+                "\ud83d\udce2\u2502og\u0142oszenia",
+                "\ud83d\udcd5\u2502regulamin",
+                "\ud83c\udfb0\u2502autorole"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83e\uddfe\ud83d\udccb]__Kana\u0142y tekstowe",
+            "text": [
+                "\ud83d\udc4b\u2502witamy",
+                "\ud83d\udcd7\u2502og\u00f3lny",
+                "\ud83d\udcdd\u2502propozycje",
+                "\ud83d\udd0f\u2502sprawa-do-admina",
+                "\ud83c\udfbc\u2502listy-muzyki",
+                "\ud83d\udcc8\u2502ranking",
+                "\ud83d\udd95\u2502\u017cegnamy"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83c\udfc8\ud83e\ude81]__Strefa Zabaw",
+            "text": [
+                "\ud83d\udc4a\u2502jebanie-disa",
+                "\ud83d\udc40\u2502memes",
+                "\ud83d\udd22\u2502liczenie",
+                "\ud83e\udd16\u2502clever-bot",
+                "\ud83d\udc7d\u25026obcy",
+                "\ud83d\ude45\u2502kana\u0142-do-wyzywania-admin\u00f3w",
+                "\ud83e\udd2c\u2502zamordyzm",
+                "\ud83d\udcde\u2502rysunki-z-garticphona",
+                "\ud83d\udcdc\u2502historyczne-cytaty"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83d\udd0a\ud83c\udfa4]__Kana\u0142y g\u0142osowe",
+            "text": [
+                "\ud83c\udfb5\u2502music"
+            ],
+            "vc": [
+                "\ud83d\udd0a\u2502Og\u00f3lny",
+                "\ud83d\udd0a\u2502Do Grania",
+                "\ud83d\udd0a\u2502Do Rozmawiania",
+                "\ud83d\udd0a\u2502Uczenie si\u0119/Robienie zada\u0144",
+                "\ud83d\udd0a\u2502E-lekcje",
+                "\ud83d\udd0a\u2502Czekam na admina",
+                "\ud83d\udd08 \u2502Do Samotnosci",
+                "\ud83d\udd08 \u2502Do Nagrywania",
+                "\ud83d\udd08 \u2502Do montowania",
+                "\ud83d\udd08 \u2502Super kana\u0142",
+                "\ud83d\udd07\u2502Afk"
+            ]
+        },
+        {
+            "category": "[\ud83d\udcc5\ud83d\udccc]__Tematyczne",
+            "text": [
+                "\ud83c\udfac\u2502youtube",
+                "\u2699\u2502w\u0142asne-gry",
+                "\u2702\u2502dla-monta\u017cyst\u00f3w"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83e\udd16\u2049]__Komendy Bot\u00f3w - info",
+            "text": [
+                "\ud83e\uddf7\u2502rythm",
+                "\ud83e\uddf7\u2502groovy",
+                "\ud83e\uddf7\u2502startit",
+                "\ud83e\uddf7\u2502probot",
+                "\ud83e\uddf7\u2502yagpdbxyz",
+                "\ud83e\uddf7\u2502owo",
+                "\ud83e\uddf7\u2502patch-bot",
+                "\ud83e\uddf7\u2502pansage-bot",
+                "\ud83e\uddf7\u2502yetanotherbot"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\u303d\ud83e\uddf7]__Wa\u017cne linki",
+            "text": [
+                "\ud83d\udcc0\u2502cracki",
+                "\ud83d\udce5\u2502download",
+                "\u2622\u2502jumpscare",
+                "\ud83d\udd0e\u2502cheaty",
+                "\ud83d\udcda\u2502do-szko\u0142y-itp",
+                "\ud83d\udcbb\u2502gry",
+                "\ud83d\uddbc\u2502zdj\u0119cia",
+                "\ud83e\udd16\u2502boty",
+                "\ud83e\uddee\u2502fajne-aplikacje",
+                "\ud83d\udccb\u2502tagi",
+                "\ud83d\ude0f\u2502nudesy-marcina"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83c\udfae\ud83d\udcbb]__Strefa Gamingowa",
+            "text": [
+                "\ud83c\udfae\u2502og\u00f3lny-do-r\u00f3\u017cnych-gier",
+                "\ud83c\udfae\u2502ark-survival-evolved",
+                "\ud83c\udfae\u2502minecraft",
+                "\ud83c\udfae\u2502league-of-legends",
+                "\ud83c\udfae\u2502counter-strike-global-offensive",
+                "\ud83c\udfae\u2502grand-theft-auto",
+                "\ud83c\udfae\u2502fortnite",
+                "\ud83c\udfae\u2502rocket-league"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83d\udcd9\ud83d\udd8b]__Strefa Szkolna",
+            "text": [
+                "\ud83d\udcc5\u2502plan-lekcji",
+                "\ud83d\udcd5\u2502biologia",
+                "\ud83d\udcd5\u2502chemia",
+                "\ud83d\udcd5\u2502eksploatacja-urz\u0105dze\u0144",
+                "\ud83d\udcd5\u2502geografia",
+                "\ud83d\udcd5\u2502historia",
+                "\ud83d\udcd5\u2502informatyka",
+                "\ud83d\udcd5\u2502j\u0119zyk-niemiecki",
+                "\ud83d\udcd5\u2502j\u0119zyk-angielski",
+                "\ud83d\udcd5\u2502j\u0119zyk-polski",
+                "\ud83d\udcd5\u2502matematyka",
+                "\ud83d\udcd5\u2502podstawy-przedsi\u0119biorczo\u015bci",
+                "\ud83d\udcd5\u2502religia",
+                "\ud83d\udcd5\u2502fizyka",
+                "\ud83d\udcd5\u2502uk\u0142ady-analogowe",
+                "\ud83d\udcd5\u2502urz\u0105dzenia-i-instalacje",
+                "\ud83d\udcd5\u2502uk\u0142ady-automatyki",
+                "\ud83d\udcd5\u2502wf",
+                "\ud83d\udcd5\u2502wykonywanie-i-monta\u017c",
+                "\ud83d\uddbc\u2502zdj\u0119cia-nauczycieli"
+            ],
+            "vc": []
+        },
+        {
+            "category": "[\ud83d\udee0\u274c]__Admin Workbench",
+            "text": [
+                "\u2753\u2502test",
+                "\u274c\u2502muty-i-bany",
+                "\ud83d\udce9\u2502admin\u00f3w-g\u0142osowanie",
+                "\ud83d\udd25\u2502tylko-dla-admin\u00f3w",
+                "m\u00f3j-kana\u0142"
+            ],
+            "vc": [
+                "\ud83d\uddfd\u2502Admin\u00f3w posiedzenie"
+            ]
+        }
+    ]
+}

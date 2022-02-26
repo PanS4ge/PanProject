@@ -3,6 +3,7 @@ import json
 import os
 
 import discord
+from discord_components import Button, ButtonStyle
 
 import utils
 
@@ -23,9 +24,12 @@ async def ReturnCmd(idres):
         if (len(error['errors']) >= 1):
             for x in error['errors']:
                 #print(x)
-                embedVar.add_field(name=x['message'], value=x['crashed_file'] + " / " + x['error'], inline=False)
-            with open(f"{loc}/cmds/error.json", "w", encoding='utf8') as f:
-                f.write(errors_structure)
+                try:
+                    embedVar.add_field(name=x['error'], value=x['crashed_file'] + " / " + x['message'], inline=False)
+                except:
+                    embedVar.add_field(name="Too long message or something", value=x['crashed_file'] + " / Check in error.json", inline=False)
+            #with open(f"{loc}/cmds/error.json", "w", encoding='utf8') as f:
+            #    f.write(errors_structure)
         if (len(error['errors']) == 0):
             embedVar.add_field(name="No errors!", value="Bot is error-proof!", inline=False)
         return embedVar

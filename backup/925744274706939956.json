@@ -9,19 +9,29 @@
             "vc": []
         },
         {
-            "category": "Important",
+            "category": "Stats:",
             "text": [
-                "announcements"
+                "logs"
             ],
-            "vc": []
+            "vc": [
+                "-- TOP.GG --",
+                "All: 16",
+                "Monthly: 11",
+                "Last: PanSageYT\u0674"
+            ]
         },
         {
-            "category": "Chats",
+            "category": "Important",
             "text": [
-                "\ud83d\udcacchat-en",
-                "\ud83d\udcacchat-pl",
-                "\ud83d\udc3bcommands",
-                "\ud83e\udddbscam-links"
+                "\ud83c\udccfrules",
+                "\ud83c\udfbaannouncements",
+                "\ud83c\udfbafree-bots",
+                "\ud83d\udd25patches",
+                "\ud83c\udf52fix-tracker",
+                "\ud83e\uddda\ud83c\udffcmc_pfp-backgrounds",
+                "\ud83e\udd16help-commmand",
+                "\ud83e\udd75partnered_logs",
+                "\ud83d\udc3ccurrent-versions"
             ],
             "vc": []
         },
@@ -34,6 +44,39 @@
             "vc": []
         },
         {
+            "category": "Chats",
+            "text": [
+                "\ud83d\udcacchat-en",
+                "\ud83d\udcacchat-pl",
+                "\ud83d\udcackorero-maori",
+                "\ud83d\udc3bcommands",
+                "\ud83e\udd75random_prntsc",
+                "\ud83e\udddbscam-links",
+                "\ud83d\udca9feedback",
+                "\ud83e\udd17bump-chart",
+                "\ud83e\udd17d-bump",
+                "\ud83d\ude0epsc-donations",
+                "\u0d9events",
+                "\u0d9events-logs"
+            ],
+            "vc": [
+                "Voice chat #1",
+                "Voice Chat #2",
+                "Voice Chat #3"
+            ]
+        },
+        {
+            "category": "Gaming time",
+            "text": [
+                "\ud83e\udd75activity-setup"
+            ],
+            "vc": [
+                "Gaming time! ?vc_activity",
+                "Gaming time! ?vc_activity",
+                "Gaming time! ?vc_activity"
+            ]
+        },
+        {
             "category": "Propositions",
             "text": [
                 "\ud83d\udc3cpropositions"
@@ -41,10 +84,27 @@
             "vc": []
         },
         {
+            "category": "Partnership",
+            "text": [
+                "\ud83e\udd28what-will-i-get",
+                "\ud83e\udd1dpartnered_servers"
+            ],
+            "vc": []
+        },
+        {
+            "category": "yes?",
+            "text": [
+                "sandbox-channel"
+            ],
+            "vc": []
+        },
+        {
             "category": "Author Corner",
             "text": [
                 "devtoolkit",
-                "rrun"
+                "rrun",
+                "shhh-secret-commands",
+                "2-roadmap"
             ],
             "vc": []
         }

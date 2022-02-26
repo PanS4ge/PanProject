@@ -1,0 +1,18 @@
+{
+    "backup": [
+        {
+            "category": "Text Channels",
+            "text": [
+                "general"
+            ],
+            "vc": []
+        },
+        {
+            "category": "Voice Channels",
+            "text": [],
+            "vc": [
+                "General"
+            ]
+        }
+    ]
+}

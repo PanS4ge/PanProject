@@ -1,0 +1,34 @@
+{
+    "backup": [
+        {
+            "category": "Text Channels",
+            "text": [
+                "verify"
+            ],
+            "vc": []
+        },
+        {
+            "category": "Voice Channels",
+            "text": [],
+            "vc": [
+                "General"
+            ]
+        },
+        {
+            "category": "Staff",
+            "text": [
+                "staff-news",
+                "staff-general",
+                "join"
+            ],
+            "vc": []
+        },
+        {
+            "category": "Support",
+            "text": [
+                "\ud83c\udfabcreate-a-ticket\ud83c\udfab"
+            ],
+            "vc": []
+        }
+    ]
+}

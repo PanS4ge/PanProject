@@ -1,0 +1,438 @@
+{
+  "eng": {
+    "global": {
+      "interaction_embed": "Here you go!",
+      "error_save": "Error. I saved error in my error database, my creator will check out.",
+      "for": "for",
+      "bot_project_name": "Pan-Project"
+    },
+    "runner_kernel": {
+      "on_msg": "Powering on..., please wait while it's running",
+      "off_msg": "Turning off...",
+      "perm_denied": "Duck off"
+    },
+    "kernel": {
+      "added_server": "I got added to server {guildname} ({guildid})",
+      "kicked_server": "I got kicked from server {guildname} ({guildid})",
+      "dbump_first": "Thank you for bumping this server on disboard <@!{message.author.id}>, I see it's your first time bumping so take this ~~500~~ **1000** :fries: and badge BUMPER! Stay bumpin'",
+      "dbump": "Thank you for bumping this server on disboard <@!{message.author.id}>, take this 500 :fries:! Stay bumpin'",
+      "on_ping_wakeup": "My prefix is `{config[f'prefix_{whichone}']}`, start with `{config[f'prefix_{whichone}']}help`",
+      "gban_alert": "You got gbanned - sorry!",
+      "add_bot_link": "Thank you for supporting my bot!\nhttps://discord.com/api/oauth2/authorize?client_id=915657093862817802&permissions=8&scope=bot",
+      "only_owner": "Only for owner.",
+      "cleared_fries": "Cleared his :fries:",
+      "invalid_args": "Invalid args",
+      "maintencemode": ":warning: Jestem w trybie konserwacji",
+      "maintencemodeonbydefault": "Well quick 2 words - Duck off",
+      "maintencemodeturningon": "Ok. Please wait",
+      "maintencemodeonoff": ":warning: My maintenance mode is no longer on!",
+      "maintencemodeoffon": ":warning: My maintenance mode is on!",
+      "support_server": "Join and you can get free 1,000 :fries: **on every server** and exclusive badge (:man_gesturing_ok:) on memberinfo\n-> https://discord.gg/4dRPUTsPza <-",
+      "support_server_ad": "**-------> Pan-Project Support Server <--------**\n:arrow_forward: English server \n:arrow_forward: Do you get raided?\n:arrow_forward: Really annoyed by creating channels over and over?\n:arrow_forward: A lot of messages that offer nitro for free?\n:eye: **You are looking on solution right now!**\n:monkey_face: Pansage Bot is offering a lot of features such like:\n:white_small_square: Anti-Fishing :fish: \n:white_small_square: Scam links database with over 4,000 websites! :newspaper: \n:white_small_square: Backups :leftwards_arrow_with_hook: \n:white_small_square: Economy based on messages :speech_left: \n:white_small_square: Not only server leaderboards - but **global** leaderboards :globe_with_meridians: \n:white_small_square: Badges :military_medal: \n:white_small_square: Active developer :man_technologist: \nJoin and you can get free 1,000 :fries: **on every server** and exclusive badge (:man_gesturing_ok:) on `?memberinfo`\n-> https://discord.gg/4dRPUTsPza <-\n\nAlso we are asking you to help us train the algorythm to prevent future scams! Send on `#\uD83E\uDDDBscam-links` channel (on support server) and we will add it to our database!",
+      "c4k": "Gotcha his ass",
+      "micup": "fuck off",
+      "8ballresponses": [
+        "As I see it, yes.",
+        "Ask again later.",
+        "Better not tell you now.",
+        "Cannot predict now.",
+        "Concentrate and ask again.",
+        "Don’t count on it.",
+        "It is certain.",
+        "It is decidedly so.",
+        "Most likely.",
+        "My reply is no.",
+        "My sources say no.",
+        "Outlook not so good.",
+        "Outlook good.",
+        "Reply hazy, try again.",
+        "Signs point to yes.",
+        "Very doubtful.",
+        "Without a doubt.",
+        "Yes.",
+        "Yes – definitely.",
+        "You may rely on it."
+      ],
+      "1st8ball": "8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: Shaking 8ball...",
+      "2nd8ball": "8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: 8ball is giving answer...",
+      "3nd8ball": "\"8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: **{responses[random.randint(0, len(responses))]}**\"",
+      "invalid_ask": "On what should I decide?",
+      "kernel_error": ":warning: KERNEL ERROR! :warning:\nLogging off & saving to database...",
+      "count_vote": "Counted your vote (If you already counted, we won't count it)",
+      "claim_1k": "{user.name} claimed his 1,000 :fries: (and got exclusive badge)",
+      "reply_respond": "Got it! You should see yourself claiming on logs.",
+      "error_claim": "Sorry, try again, use won't be took",
+      "already_claim": "Bruh, you already claimed it!",
+      "tofix": "~ Fetched from my support server (?support_server)\n\n{tofixmsg.content}\n*sent by {tofixmsg.author}*"
+    },
+    "pmc_AntiFish": {
+      "greenflag": "It's may be safe for you.",
+      "yellowflag": "It might not be the safest website, but be sure to NOT give any info",
+      "redflag": "If you wanted to click it, STOP IT!",
+      "start_scan": "Starting scan of link...",
+      "info_scan": "Starting scan of link ({msglink})\nCurrently comparing link to my database for sus variants",
+      "greenflag_end": "Similarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{greenflag}*",
+      "yellowflag_end": "Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{yellowflag}*\"",
+      "redflag_end": "Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{redflag}*",
+      "unknown_end": "Scanned message - Scam link possibility {math.floor(per*150)}%",
+      "scam_link_reason": "Posted scam link ({msglink})",
+      "cant_kick": "\n*Can't kick*",
+      "cant_ban": "\n*Can't ban*",
+      "error": "Unable to scan link"
+    },
+    "pmc_CountMsg": {
+      "Found_Money": "Congrats! You found {monet}:fries: laying on <#{message.channel.id}>!"
+    },
+    "activity": {
+      "not_owner": "Your not my dad!",
+      "error": "Invalid args\nThere are Streaming_link, Game, Watching, Listening"
+    },
+    "backup": {
+      "not_admin": "Only admins can do it - I know I don't need that much perms, but it can break",
+      "start_bu": "Starting backup...",
+      "end_bu": "Finished backup",
+      "date": "Date",
+      "category": "Category",
+      "text": "Text",
+      "vc": "VC"
+    },
+    "devtoolkit": {
+      "devtoolkit": "Dev Toolkit"
+    },
+    "economy": {
+      "cooldown_hour": "Sorry, you can run this command again in {math.floor(60 - (int(time.time()) - cd[str(message.author.id)]) / 60)} minutes.",
+      "ecoearn": "You earned {mon}{eco_curr}",
+      "glb": "Global Leaderboard",
+      "your_place": "Your place on leaderboard",
+      "with": "with",
+      "ecobal": "Your balance count is {'{:,}'.format(cnt[str(message.author.id)])}{eco_curr}",
+      "nodata": "No data.",
+      "ccd": "Removed Cooldown!",
+      "not_enough_money": "Bank amount is insufficent",
+      "set": "You set his balance to {message.content.split(' ')[3]}{eco_curr}!",
+      "send": "You payed him {message.content.split(' ')[3]}{eco_curr}!\nYour new balance: {Get_Bank(message.author.id, message.guild.id)}{eco_curr}\n{message.content.split(' ')[2]} balance: {Get_Bank(ping, message.guild.id)}{eco_curr}",
+      "error": "Unable to send due to error",
+      "invalid_ping": "Invalid Ping",
+      "invalid_args": "Invalid Args"
+    },
+    "generate": {
+      "win95": "Your Windows 95 Key is *{str(allp)}*",
+      "oem": "Your OEM Key is *{str(allp)}*"
+    },
+    "guildinfo": {
+      "title": "Information About {partnered} **{message.guild.name}**:",
+      "value": ":white_small_square: ID: **{message.guild.id}** \n:white_small_square: Owner: **<@!{message.guild.owner_id}>** \n:white_small_square: Location: **{message.guild.region}** \n:white_small_square: Creation: **{message.guild.created_at}** \n:white_small_square: Members: **{'{:,}'.format(message.guild.member_count)}** \n:white_small_square: Channels: **{channels}** Channels; **{text_channels}** Text, **{voice_channels}** Voice, **{categories}** Categories \n:white_small_square: Verification: **{str(message.guild.verification_level).upper()}** \n:white_small_square: Features: {', '.join(f'**{x}**' for x in message.guild.features)} \n:white_small_square: Splash: {message.guild.splash}\n**Bot Data:**\n:white_small_square: Net Worth (Economy): **{str('{:,}'.format(Get_Server_Net_Worth(message.guild)))}**:fries:\n:white_small_square: Message Count: **{str('{:,}'.format(Get_Server_Messages(message.guild)))}**"
+    },
+    "heck": {
+      "heck_owner_err": "You can't heck my owner",
+      "1ststage": "☎️Calling hecker... Please wait...",
+      "2ndstage": "Hecker got it, starting heck...",
+      "3rdstage": "```Setting target: {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```",
+      "4thstage": "```Target locked```",
+      "5thstage": "```Brute-forcing {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```",
+      "6thstage": "```Freezing {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```",
+      "7thstage": "```Sending nukes on {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```",
+      "8thstage": "```Checking {message.content.split(' ')[2]}'s browsing history```",
+      "9thstage": "```Checking {message.content.split(' ')[2]}'s browsing history```Found:\n{random.randint(2, 1135)} sus websites",
+      "10thstage": "```Checking {message.content.split(' ')[2]}'s browsing history```Found:\n{random.randint(2, 1135)} very sus websites",
+      "11thstage": "```Reporting {message.content.split(' ')[2]}'s death to his parents...```",
+      "12thstage": "```Updating {message.content.split(' ')[2]} social status```",
+      "13thstage": "```Stealing {message.content.split(' ')[2]}'s {random.randint(1, 50 * len(message.content.split(' ')[2]))} social points```",
+      "remdc_exc": "Exception!\nException: User cannot can't be found\nRemoving message.author.id...",
+      "remdc": "Exception!\nException: User cannot can't be found",
+      "success": ":tada::tada::tada:`Successful heck!`:tada::tada::tada:",
+      "email": "His email is ",
+      "pass": "His password is "
+    },
+    "help": {
+      "help": "help"
+    },
+    "legend": {
+      "legend": "legend"
+    },
+    "loadbackup": {
+      "loading": "Loading backup",
+      "nobackup": "Bro, I can't help you - you didn't make any backups",
+      "clearing": "Clearing your server - don't worry, I will fix it! (but you fix your permissions, because creator is lazy af)"
+    },
+    "mc_pfp": {
+      "inargs": "Invalid args",
+      "mention": "Please at least mention me :(",
+      "gen1": "Generating...",
+      "gen2": "Generated, resizing and applying settings...",
+      "inbg": "Invalid background - all backgrounds are on my support server!",
+      "messbelow": "Your avatar is in message below...",
+      "inuser": "Invalid nickname - Are you sure this is *Minecraft: Java Edition* username?"
+    },
+    "member_info": {
+      "memberinfo": "Member-Info",
+      "title": "Information About **{message.author.name}**: ",
+      "value": ":white_small_square: ID: **{message.author.id}** \n:white_small_square: Highest role: <@&{message.author.top_role.id}>\n:white_small_square: Joined at: **{message.author.joined_at}** \n:white_small_square: Creation: **{message.author.created_at}**\n**Bot Data:**\n:white_small_square: Net Worth (Global): **{str('{:,}'.format(globworth))}**:fries:\n:white_small_square: Net Worth (Server): **{str('{:,}'.format(eco.Get_Bank(message.author.id, message.guild.id)))}**:fries:\n:white_small_square: Message Count (Global): **{str('{:,}'.format(Get_Global_MsgCnt(message)))}**\n:white_small_square: Message Count (Server): **{str('{:,}'.format(Get_Msg(message)))}**\n:white_small_square: Badges `?legend`: \n**{BADGES}**"
+    },
+    "msgcnt": {
+      "msgcnt": "Your message count is {cnt[str(message.author.id)]}",
+      "noprogress": "Can't check your progress, at least this message will let me! Try again :D"
+    },
+    "ping": {
+      "toomuch": "Too much rounds!",
+      "wait": "**PING!** Awaiting for pong!",
+      "pong": "\uD83C\uDFD3 Pong! {int(ping)}ms",
+      "ratio": "\uD83C\uDFD3Pong! After {str(message.content).split(\" \")[1]} ping, ratio is {get_num_array(temp)}ms",
+      "invalid": "Invalid round number"
+    },
+    "random_prntscr": {
+      "rare_error": "S̴̛̩͋͘ǫ̸̛̖̲̬̘̗̲̹͙̮̫̘̭͍̝̆̓͌̾̽͋r̵̮̽͂̈́͋͒̎̈r̴̲̭̼̔̓̓̉y̶̻̭̋̓̎͐͋̈́͂͊͒̈́͆͐͘͝,̶̞̑̌̄̇̕ ̷̡̨̼̻̰̫̘͉̿́͝b̶̨͓̖̙̭͈̔ṙ̶͙̬́͊́̔̽̆͝o̴̢͓͓̹̣̣̭̝̺̓͂̉̔̂͜͠͠.̶̨͎͈͓̘̦̹̣͖͇͒̀̔̐̉͗͜͝ ̵̡̉͑̆̕G̶̛̲̭͉̰̥̭̗͆̈̍͗̊̅͌̋͌̎͊̊̍͝o̴̘̲̣̠̼̻͈̰͙͙̠̅́͋̾̈͗͊͑̏͒̽̄ͅd̸̮̣̠̥̻̩͖̜͓̻̟̘̊̆̂͆̍̎̋́̕͜͝ ̶̛̰̤̟̙̯̭̹̼̦̝̞͑̈́͌͛̒̾̔͛̀̆̓̊͐̕͜b̵̨̨͔̞̬̼͎̣̪̟̥͍̼̭̫͒̾̆̀̔͒͗̾̋̏͝͠l̶̳̻͓̘͖̤̳̣̋͜ḛ̵̺͇͔̥̍͛̔͗͗̋s̶͚̣̪̈̽̋̊̂̋̂͂̊̎̚̚͝s̸͇͂̌̏͛̆̚ ̸̧̮̮͉̩͕̜̲̔͜y̸̧̘̞̬̫̼̗̝̫̭͌̏̾́̽̅̚͜o̵̺̫̗̙̹̬̎͂͌͒̈́̈́̽̚u̷͈̲̺̱͛̀̏͜r̴̯̞̫̘̱͕̀̈́͜ ̵̻̬̩̯͇̤̤͍͒̂̿̌̀̓̎͠ȩ̶̛̳̮̹͈̭̭̤͔͈͉̭͌̑̓͋̕͜͜͜͠y̶̨̧̢͙͙̤͈̙͓̤̰͖̩̞̋̀͂̆̔̋͑́̚̕ę̸̨̪̱̪̣͗̂̿͂̔͐̀̾̌͋̿̑͠͝s̶̡̮̼̣̺̻̖͓̳͖̠͎̝͌̆̂̀̾̎͒̋͊͑̔͛́̃͝!̷̛̝̼̬̫́̈́̈́͝ ̵̧̫͎̯̗̪͎̥̺̖̰̰͕͖͗͂̋͌͊̍͛̋̄͝H̸̨̛̹͚͖̹̰͚̎̄͗̓̄̌̏͐̀̿̿͐̈̕ǫ̷̨̢̼͈̩͇̮̪̞̫̳͌͗̃͂p̷̹͔̄̈͆̊̎̿̂e̶̟͎͎̻̝̺̮͕̞̊̔͂͗̾͐͜ ̶̢̨̧̰͈̭̦̮̞̠͔͖̑͌̓̉̍͒̇̈́̂͛̄̀͘͝i̵̧̛͍̲͒̄̄̋̑͝t̴̙̱̠̼̩̏͋̉̎̊͒̋͒͗̅̏̒͋ ̷̨̩̦̤̹̬̙̘͈̻̂͑̔̍̃i̴̞̫̥͙̯̭͖̲̿͊̓͐͒͜ͅͅs̶̡̰̱̩̼̈́̓̋̀͋̈́̉̕n̶̲̰̳͋̓̅͌'̸̢̬̞̟̮̭͔̙̻̟͔̲́̃̄͋͘t̸̛͕̱̏̈́ ̸̟̩̺̥̠̯̣̇̾̀̀t̶̩͙̙̣͎̒̉͛̒͆̓̽̇̇̇̌́̕͝ḩ̸̧̀̑̌͂̆̐̿͘͝a̷̲̞͋̿͒͌̊̍̏͌̍̿͋̕ţ̶̟͇̱̘̠͈͓̠̻̱͐̔́͂͘͝ ̴̗͍̯͈̼̎̅͌b̵̠̯͕̭̝̩̟̰̱̞͙͛̾͌̈̉̕͜á̷̭̗͆̈́̆̈̈́̀̀͝͝͝d̵̢̩̤͍̤͉̫̙͉̳̲̦͚̂̂̋̐̒̋́́͊̈́!̶̢̛̛͍̹̘̲̙̺̥̼̝̰̂̈́̈̅̈́͒̑̋̐̑̂͜͠",
+      "befmsg": "Sorry, bro. God bless your eyes! Hope it isn't that bad!",
+      "notnsfw": "Sorry, website has too much random things and nsfw is recommended. I won't let you!"
+    },
+    "settings": {
+      "expectchan": "expecting",
+      "options": "Options:",
+      "channelping": "channel ping",
+      "list": "list",
+      "to": "to",
+      "from": "from",
+      "exists": "when exists - overrides / to remove *REMOVE*",
+      "tf": "expecting True/False"
+    },
+    "yt_stats": {
+      "ytstat": "YouTube statistics for {str(message.content.split(' ')[1].replace('https://youtu.be/', ''))}",
+      "hopeyoulike": "\uD83E\uDD16 Hope you like my bot",
+      "hopeyoulikeval": "?add_bot to add it!",
+      "datecreate": ":date: Date created",
+      "hourcreate": ":alarm_clock: Hour created",
+      "yee": "<:yeee:928675155465621525>",
+      "rating": ":link: Rating",
+      "nope": "<:nope:928675155440443503>",
+      "viewcount": "<:views:931894288663609364> View Count",
+      "apiused1": "API used",
+      "apiused2": "Return Youtube Dislikes",
+      "videoisnt": "<:deleted:931894288491630612> This video isn't deleted",
+      "videoisnt2": "It's available to watch!",
+      "videois": "<:deleted:931894288491630612> This video was deleted",
+      "videois2": "Sorry",
+      "invalidyt": "Invalid YouTube link, maybe try putting `https://youtu.be/`"
+    }
+  },
+  "pl": {
+    "global": {
+      "interaction_embed": "Prosze",
+      "error_save": "Błąd, zapisuje w mojej bazie, a mój właściciel później zobaczy",
+      "for": "od",
+      "bot_project_name": "Pan-Project"
+    },
+    "runner_kernel": {
+      "on_msg": "Włączam... poczekaj...",
+      "off_msg": "Wyłączam...",
+      "perm_denied": "Odwal sie"
+    },
+    "kernel": {
+      "added_server": "Zostałem dodany do {guildname} ({guildid})",
+      "kicked_server": "Zostałem wywalony {guildname} ({guildid})",
+      "dbump_first": "Dziekuje z podbicie tego serwera na disboard <@!{message.author.id}>, Widze że twój pierwszy raz wiec weź ~~500~~ **1000** :fries: i odznake BUMPER!",
+      "dbump": "Dziekuje za podbicie tego serwera na disboard <@!{message.author.id}>, weź 500 :fries:!",
+      "on_ping_wakeup": "Mój prefix to `{config[f'prefix_{whichone}']}`, zacznij z `{config[f'prefix_{whichone}']}help`",
+      "gban_alert": "Masz gbana - sorry!",
+      "add_bot_link": "Dziekuje za pomoc temu botowi!\nhttps://discord.com/api/oauth2/authorize?client_id=915657093862817802&permissions=8&scope=bot",
+      "only_owner": "Tylko dla właściciela",
+      "cleared_fries": "Cleared his :fries:",
+      "invalid_args": "Invalid args",
+      "maintencemode": ":warning: I'm in maintence mode!",
+      "maintencemodeonbydefault": "Well quick 2 words - Duck off",
+      "maintencemodeturningon": "Ok. Please wait",
+      "maintencemodeonoff": ":warning: My maintence mode is no longer on!",
+      "maintencemodeoffon": ":warning: My maintence mode is on!",
+      "support_server": "Join and you can get free 1,000 :fries: **on every server** and exclusive badge (:man_gesturing_ok:) on memberinfo\n-> https://discord.gg/4dRPUTsPza <-",
+      "support_server_ad": "**-------> Pan-Project Support Server <--------**\n:arrow_forward: English server \n:arrow_forward:  Do you get raided?\n:arrow_forward: Really annoyed by creating channels over and over?\n:arrow_forward: A lot of messages that offer nitro for free?\n:eye: **You are looking on solution right now!**\n:monkey_face: Pansage Bot is offering a lot of features such like:\n:white_small_square: Anti-Fishing :fish: \n:white_small_square: Scam links database with over 4,000 websites! :newspaper: \n:white_small_square: Backups :leftwards_arrow_with_hook: \n:white_small_square: Economy based on messages :speech_left: \n:white_small_square: Not only server leaderboards - but **global** leaderboards :globe_with_meridians: \n:white_small_square: Badges:military_medal: \n:white_small_square: Active developer :man_technologist: \n:white_small_square: Serial Keys to Windows products :key: \n*Remember that Piracy is no good, keys only for VM-testing*\nJoin andyou can get free 1,000 :fries: **on every server** and exclusive badge (:man_gesturing_ok:) on `?memberinfo`\n-> https://discord.gg/4dRPUTsPza <-\n\nAlso we are asking you to help us train the algorythm to prevent future scams! Send on `#\uD83E\uDDDBscam-links` channel (on support server) and we will add it to our database!",
+      "c4k": "Gotcha his ass",
+      "micup": "fuck off",
+      "8ballresponses": [
+        "As I see it, yes.",
+        "Ask again later.",
+        "Better not tell you now.",
+        "Cannot predict now.",
+        "Concentrate and ask again.",
+        "Don’t count on it.",
+        "It is certain.",
+        "It is decidedly so.",
+        "Most likely.",
+        "My reply is no.",
+        "My sources say no.",
+        "Outlook not so good.",
+        "Outlook good.",
+        "Reply hazy, try again.",
+        "Signs point to yes.",
+        "Very doubtful.",
+        "Without a doubt.",
+        "Yes.",
+        "Yes – definitely.",
+        "You may rely on it."
+      ],
+      "1st8ball": "8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: Shaking 8ball...",
+      "2nd8ball": "8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: 8ball is giving answer...",
+      "3nd8ball": "\"8ball is now answering to question *{user_msg.replace(config[f'prefix_{whichone}'] + '8ball ', '')}*\nAnswer: **{responses[random.randint(0, len(responses))]}**\"",
+      "invalid_ask": "On what should I decide?",
+      "kernel_error": ":warning: KERNEL ERROR! :warning:\nLogging off & saving to database...",
+      "count_vote": "Counted your vote (If you already counted, we won't count it)",
+      "claim_1k": "{user.name} claimed his 1,000 :fries: (and got exclusive badge)",
+      "reply_respond": "Got it! You should see yourself claiming on logs.",
+      "error_claim": "Sorry, try again, use won't be took",
+      "already_claim": "Bruh, you already claimed it!",
+      "tofix": "~ Fetched from my support server (?support_server)\n\n{tofixmsg.content}\n*sent by {tofixmsg.author}*"
+    },
+    "pmc_AntiFish": {
+      "greenflag": "It's may be safe for you.",
+      "yellowflag": "It might not be the safest website, but be sure to NOT give any info",
+      "redflag": "If you wanted to click it, STOP IT!",
+      "start_scan": "Starting scan of link...",
+      "info_scan": "Starting scan of link ({msglink})\nCurrently comparing link to my database for sus variants",
+      "greenflag_end": "Similarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{greenflag}*",
+      "yellowflag_end": "Kicked {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{yellowflag}*\"",
+      "redflag_end": "Banned {str(message.author)}, because user posted scam link\nSimilarity in database {math.floor(per * 150)}%\nAdditional \"Red flags\": {j}\nVerdict: *{redflag}*",
+      "unknown_end": "Scanned message - Scam link possibility {math.floor(per*150)}%",
+      "scam_link_reason": "Posted scam link ({msglink})",
+      "cant_kick": "\n*Can't kick*",
+      "cant_ban": "\n*Can't ban*",
+      "error": "Unable to scan link"
+    },
+    "pmc_CountMsg": {
+      "Found_Money": "Congrats! You found {monet}:fries: laying on <#{message.channel.id}>!"
+    },
+    "activity": {
+      "not_owner": "Your not my dad!",
+      "error": "Invalid args\nThere are Streaming_link, Game, Watching, Listening"
+    },
+    "backup": {
+      "not_admin": "Only admins can do it",
+      "start_bu": "Starting backup...",
+      "end_bu": "Finished backup",
+      "date": "Date",
+      "category": "Category",
+      "text": "Text",
+      "vc": "VC"
+    },
+    "clearlinkdb": {
+      "not_owner": "I refuse",
+      "begin": "Clearing... 0/5 rounds",
+      "clearing_prog": "Clearing... {rnd}/5 rounds - Link count {cntlinks} -> {len(links)}",
+      "end": "Cleared {cntlinks - len(links)} similar links.\nCurrent count -> {len(links)}\nCreating backup & saving new link db..."
+    },
+    "devtoolkit": {
+      "devtoolkit": "Dev Toolkit"
+    },
+    "economy": {
+      "cooldown_hour": "Sorry, you can run this command again in {math.floor(60 - (int(time.time()) - cd[str(message.author.id)]) / 60)} minutes.",
+      "ecoearn": "You earned {mon}{eco_curr}",
+      "glb": "Global Leaderboard",
+      "your_place": "Your place on leaderboard",
+      "with": "with",
+      "ecobal": "Your balance count is {'{:,}'.format(cnt[str(message.author.id)])}{eco_curr}",
+      "nodata": "No data.",
+      "ccd": "Removed Cooldown!",
+      "not_enough_money": "Bank amount is insufficent",
+      "set": "You set his balance to {message.content.split(' ')[3]}{eco_curr}!",
+      "send": "You payed him {message.content.split(' ')[3]}{eco_curr}!\nYour new balance: {Get_Bank(message.author.id, message.guild.id)}{eco_curr}\n{message.content.split(' ')[2]} balance: {Get_Bank(ping, message.guild.id)}{eco_curr}",
+      "error": "Unable to send due to error",
+      "invalid_ping": "Invalid Ping",
+      "invalid_args": "Invalid Args"
+    },
+    "generate": {
+      "win95": "Your Windows 95 Key is *{str(allp)}*",
+      "oem": "Your OEM Key is *{str(allp)}*"
+    },
+    "guildinfo": {
+      "title": "Information About {partnered} **{message.guild.name}**:",
+      "value": ":white_small_square: ID: **{message.guild.id}** \n:white_small_square: Owner: **<@!{message.guild.owner_id}>** \n:white_small_square: Location: **{message.guild.region}** \n:white_small_square: Creation: **{message.guild.created_at}** \n:white_small_square: Members: **{'{:,}'.format(message.guild.member_count)}** \n:white_small_square: Channels: **{channels}** Channels; **{text_channels}** Text, **{voice_channels}** Voice, **{categories}** Categories \n:white_small_square: Verification: **{str(message.guild.verification_level).upper()}** \n:white_small_square: Features: {', '.join(f'**{x}**' for x in message.guild.features)} \n:white_small_square: Splash: {message.guild.splash}\n**Bot Data:**\n:white_small_square: Net Worth (Economy): **{str('{:,}'.format(Get_Server_Net_Worth(message.guild)))}**:fries:\n:white_small_square: Message Count: **{str('{:,}'.format(Get_Server_Messages(message.guild)))}**"
+    },
+    "heck": {
+      "heck_owner_err": "You can't heck my owner",
+      "1ststage": "☎️Calling hecker... Please wait...",
+      "2ndstage": "Hecker got it, starting heck...",
+      "3rdstage": "```Setting target: {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```",
+      "4thstage": "```Target locked```",
+      "5thstage": "```Brute-forcing {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```",
+      "6thstage": "```Freezing {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```",
+      "7thstage": "```Sending nukes on {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```",
+      "8thstage": "```Checking {message.content.split(' ')[2]}'s browsing history```",
+      "9thstage": "```Checking {message.content.split(' ')[2]}'s browsing history```Found:\n{random.randint(2, 1135)} sus websites",
+      "10thstage": "```Checking {message.content.split(' ')[2]}'s browsing history```Found:\n{random.randint(2, 1135)} very sus websites",
+      "11thstage": "```Reporting {message.content.split(' ')[2]}'s death to his parents...```",
+      "12thstage": "```Updating {message.content.split(' ')[2]} social status```",
+      "13thstage": "```Stealing {message.content.split(' ')[2]}'s {random.randint(1, 50 * len(message.content.split(' ')[2]))} social points```",
+      "remdc_exc": "Exception!\nException: User cannot can't be found\nRemoving message.author.id...",
+      "remdc": "Exception!\nException: User cannot can't be found",
+      "success": ":tada::tada::tada:`Successful heck!`:tada::tada::tada:",
+      "email": "His email is ",
+      "pass": "His password is "
+    },
+    "help": {
+      "help": "help"
+    },
+    "legend": {
+      "legend": "legend"
+    },
+    "loadbackup": {
+      "loading": "Loading backup",
+      "nobackup": "Bro, I can't help you - you didn't make any backups",
+      "clearing": "Clearing your server - don't worry, I will fix it! (but you fix your permissions, because creator is lazy af)"
+    },
+    "mc_pfp": {
+      "inargs": "Invalid args",
+      "mention": "Please at least mention me :(",
+      "gen1": "Generating...",
+      "gen2": "Generated, resizing and applying settings...",
+      "inbg": "Invalid background - all backgrounds are on my support server!",
+      "messbelow": "Your avatar is in message below...",
+      "inuser": "Invalid nickname - Are you sure this is *Minecraft: Java Edition* username?"
+    },
+    "member_info": {
+      "memberinfo": "Member-Info",
+      "title": "Information About **{message.author.name}**: ",
+      "value": ":white_small_square: ID: **{message.author.id}** \n:white_small_square: Highest role: <@&{message.author.top_role.id}>\n:white_small_square: Joined at: **{message.author.joined_at}** \n:white_small_square: Creation: **{message.author.created_at}**\n**Bot Data:**\n:white_small_square: Net Worth (Global): **{str('{:,}'.format(globworth))}**:fries:\n:white_small_square: Net Worth (Server): **{str('{:,}'.format(eco.Get_Bank(message.author.id, message.guild.id)))}**:fries:\n:white_small_square: Message Count (Global): **{str('{:,}'.format(Get_Global_MsgCnt(message)))}**\n:white_small_square: Message Count (Server): **{str('{:,}'.format(Get_Msg(message)))}**\n:white_small_square: Badges `?legend`: \n**{str(temp)}**"
+    },
+    "msgcnt": {
+      "msgcnt": "Your message count is {cnt[str(message.author.id)]}",
+      "noprogress": "Can't check your progress, at least this message will let me! Try again :D"
+    },
+    "ping": {
+      "toomuch": "Too much rounds!",
+      "wait": "**PING!** Awaiting for pong!",
+      "pong": "\uD83C\uDFD3 Pong! {int(ping)}ms",
+      "ratio": "\uD83C\uDFD3Pong! After {str(message.content).split(\" \")[1]} ping, ratio is {get_num_array(temp)}ms",
+      "invalid": "Invalid round number"
+    },
+    "random_prntscr": {
+      "rare_error": "S̴̛̩͋͘ǫ̸̛̖̲̬̘̗̲̹͙̮̫̘̭͍̝̆̓͌̾̽͋r̵̮̽͂̈́͋͒̎̈r̴̲̭̼̔̓̓̉y̶̻̭̋̓̎͐͋̈́͂͊͒̈́͆͐͘͝,̶̞̑̌̄̇̕ ̷̡̨̼̻̰̫̘͉̿́͝b̶̨͓̖̙̭͈̔ṙ̶͙̬́͊́̔̽̆͝o̴̢͓͓̹̣̣̭̝̺̓͂̉̔̂͜͠͠.̶̨͎͈͓̘̦̹̣͖͇͒̀̔̐̉͗͜͝ ̵̡̉͑̆̕G̶̛̲̭͉̰̥̭̗͆̈̍͗̊̅͌̋͌̎͊̊̍͝o̴̘̲̣̠̼̻͈̰͙͙̠̅́͋̾̈͗͊͑̏͒̽̄ͅd̸̮̣̠̥̻̩͖̜͓̻̟̘̊̆̂͆̍̎̋́̕͜͝ ̶̛̰̤̟̙̯̭̹̼̦̝̞͑̈́͌͛̒̾̔͛̀̆̓̊͐̕͜b̵̨̨͔̞̬̼͎̣̪̟̥͍̼̭̫͒̾̆̀̔͒͗̾̋̏͝͠l̶̳̻͓̘͖̤̳̣̋͜ḛ̵̺͇͔̥̍͛̔͗͗̋s̶͚̣̪̈̽̋̊̂̋̂͂̊̎̚̚͝s̸͇͂̌̏͛̆̚ ̸̧̮̮͉̩͕̜̲̔͜y̸̧̘̞̬̫̼̗̝̫̭͌̏̾́̽̅̚͜o̵̺̫̗̙̹̬̎͂͌͒̈́̈́̽̚u̷͈̲̺̱͛̀̏͜r̴̯̞̫̘̱͕̀̈́͜ ̵̻̬̩̯͇̤̤͍͒̂̿̌̀̓̎͠ȩ̶̛̳̮̹͈̭̭̤͔͈͉̭͌̑̓͋̕͜͜͜͠y̶̨̧̢͙͙̤͈̙͓̤̰͖̩̞̋̀͂̆̔̋͑́̚̕ę̸̨̪̱̪̣͗̂̿͂̔͐̀̾̌͋̿̑͠͝s̶̡̮̼̣̺̻̖͓̳͖̠͎̝͌̆̂̀̾̎͒̋͊͑̔͛́̃͝!̷̛̝̼̬̫́̈́̈́͝ ̵̧̫͎̯̗̪͎̥̺̖̰̰͕͖͗͂̋͌͊̍͛̋̄͝H̸̨̛̹͚͖̹̰͚̎̄͗̓̄̌̏͐̀̿̿͐̈̕ǫ̷̨̢̼͈̩͇̮̪̞̫̳͌͗̃͂p̷̹͔̄̈͆̊̎̿̂e̶̟͎͎̻̝̺̮͕̞̊̔͂͗̾͐͜ ̶̢̨̧̰͈̭̦̮̞̠͔͖̑͌̓̉̍͒̇̈́̂͛̄̀͘͝i̵̧̛͍̲͒̄̄̋̑͝t̴̙̱̠̼̩̏͋̉̎̊͒̋͒͗̅̏̒͋ ̷̨̩̦̤̹̬̙̘͈̻̂͑̔̍̃i̴̞̫̥͙̯̭͖̲̿͊̓͐͒͜ͅͅs̶̡̰̱̩̼̈́̓̋̀͋̈́̉̕n̶̲̰̳͋̓̅͌'̸̢̬̞̟̮̭͔̙̻̟͔̲́̃̄͋͘t̸̛͕̱̏̈́ ̸̟̩̺̥̠̯̣̇̾̀̀t̶̩͙̙̣͎̒̉͛̒͆̓̽̇̇̇̌́̕͝ḩ̸̧̀̑̌͂̆̐̿͘͝a̷̲̞͋̿͒͌̊̍̏͌̍̿͋̕ţ̶̟͇̱̘̠͈͓̠̻̱͐̔́͂͘͝ ̴̗͍̯͈̼̎̅͌b̵̠̯͕̭̝̩̟̰̱̞͙͛̾͌̈̉̕͜á̷̭̗͆̈́̆̈̈́̀̀͝͝͝d̵̢̩̤͍̤͉̫̙͉̳̲̦͚̂̂̋̐̒̋́́͊̈́!̶̢̛̛͍̹̘̲̙̺̥̼̝̰̂̈́̈̅̈́͒̑̋̐̑̂͜͠",
+      "befmsg": "Sorry, bro. God bless your eyes! Hope it isn't that bad!",
+      "notnsfw": "Sorry, website has too much random things and nsfw is recommended. I won't let you!"
+    },
+    "settings": {
+      "expectchan": "expecting",
+      "options": "Options:",
+      "channelping": "channel ping",
+      "list": "list",
+      "to": "to",
+      "from": "from",
+      "exists": "when exists - overrides / to remove *REMOVE*",
+      "tf": "expecting True/False"
+    },
+    "yt_stats": {
+      "ytstat": "YouTube statistics for {str(message.content.split(' ')[1].replace('https://youtu.be/', ''))}",
+      "hopeyoulike": "\uD83E\uDD16 Hope you like my bot",
+      "hopeyoulikeval": "?add_bot to add it!",
+      "datecreate": ":date: Date created",
+      "hourcreate": ":alarm_clock: Hour created",
+      "yee": "<:yeee:928675155465621525>",
+      "rating": ":link: Rating",
+      "nope": "<:nope:928675155440443503>",
+      "viewcount": "<:views:931894288663609364> View Count",
+      "apiused1": "API used",
+      "apiused2": "Return Youtube Dislikes",
+      "videoisnt": "<:deleted:931894288491630612> This video isn't deleted",
+      "videoisnt2": "It's available to watch!",
+      "videois": "<:deleted:931894288491630612> This video was deleted",
+      "videois2": "Sorry",
+      "invalidyt": "Invalid YouTube link, maybe try putting `https://youtu.be/`"
+    }
+  }
+}

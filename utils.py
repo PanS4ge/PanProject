@@ -2,18 +2,40 @@ import discord
 from discord.ext import commands
 import json
 
+import BadgesManager
+
 with open(f"config.json", encoding='utf8') as data:
     config = json.load(data)
 
 def is_owner_of_bot(memid):
-    return memid in config['owners']
+    return memid in config['owners'] or BadgesManager.Have_Badge(4, memid)
+
+def has_sc_perms(memid):
+    with open("permissions.json", "r") as twojstary:
+        twojastara = json.loads(twojstary.read())
+    return str(memid) in twojastara
+
+def has_permission(member : discord.member, perm):
+    try:
+        with open("insudomode", "r") as ism:
+            if(ism.read() == "T" and has_sc_perms(member.id)):
+                return True
+        role = member.roles
+        for x in role:
+            if(x.permissions.administrator):
+                return True
+            elif(getattr(x.permissions, perm.lower()) == True):
+                return getattr(x.permissions, perm.lower())
+        return False
+    except:
+        print("Invalid permission, I will deny this command, but fix this - here url: https://discordpy.readthedocs.io/en/stable/api.html?highlight=permissions#discord.Permissions")
+        return False
 
 async def save_error(msg, file, ex):
     with open('cmds/error.json', 'r', encoding='utf-8') as f:
         err = json.load(f)
     data = {"message": msg, "crashed_file": file, "error": str(ex)}
     err["errors"].append(data)
-
     with open('cmds/error.json', 'w', encoding='utf-8') as f:
         json.dump(err, f, ensure_ascii=False, indent=4)
 

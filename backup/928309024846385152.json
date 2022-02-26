@@ -1,0 +1,37 @@
+{
+    "backup": [
+        {
+            "category": "\ud83d\udc4b\u2022General informations\u2022\ud83d\udc4b",
+            "text": [
+                "\ud83c\udf0c\u2022informacje\u2022\ud83c\udf0c",
+                "\ud83d\udccb\u2022rules\u2022\ud83d\udccb",
+                "\ud83d\udce2\u2022annoucements\u2022\ud83d\udce2",
+                "\ud83d\udcc3\u2022our-team\u2022\ud83d\udcc3",
+                "\ud83d\udc4b\u2022hello-there\u2022\ud83d\udc4b",
+                "\ud83d\udd2e\u2022boosts\u2022\ud83d\udd2e"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udcac\u2022OFFTOPIC\u2022\ud83d\udcac",
+            "text": [
+                "\ud83d\udcac\u2022chat\u2022\ud83d\udcac",
+                "\ud83d\udcac\u2022chat-pl\u2022\ud83d\udcac",
+                "\ud83d\udd0c\u2022commands\u2022\ud83d\udd0c",
+                "\ud83d\udca1\u2022suggestions\u2022\ud83d\udca1"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udc82\u2022Staff Only\u2022\ud83d\udc82",
+            "text": [
+                "\ud83d\udc71\u2022recruitment\u2022\ud83d\udc71",
+                "\ud83d\udcac\u2022admin-chat\u2022\ud83d\udcac",
+                "\ud83d\udd0c\u2022admin-commands\u2022\ud83d\udd0c",
+                "\ud83d\udc6e\u2022moderation\u2022\ud83d\udc6e",
+                "\ud83d\uded1\u2022errors\u2022\ud83d\uded1"
+            ],
+            "vc": []
+        }
+    ]
+}

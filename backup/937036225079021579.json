@@ -1,0 +1,87 @@
+{
+    "backup": [
+        {
+            "category": "\u1770\ufe52\u2601\ufe52EVENT\ufe52\u2e1d\u2e1d",
+            "text": [],
+            "vc": []
+        },
+        {
+            "category": "\u1770\ufe52\u2601\ufe52LOUNGE\ufe52\u2e1d\u2e1d",
+            "text": [
+                "\u22b9\u208a\u02da\ud83c\udf3a\u0a6d\u30fbchill-chat\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83c\udf38\u25de\u30fbgallery\ufe52\u0b67\u2e1d\u2e1d",
+                "\u22b9\u208a\u02da\ud83c\udf3a\u0a6d\u30fblevel-up\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83c\udf38\u25de\u30fbbot-zone\ufe52\u0b67\u2e1d\u2e1d"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u1770\ufe52\u2601\ufe52VOICE - CLUB\ufe52\u2e1d\u2e1d",
+            "text": [],
+            "vc": [
+                "\u256d\u2500\u2500\u2500\u2500\u300c\ud83e\udd42\u300d\u2500\u2500\u2500\u2500\u27a4",
+                "\u22b9\u208a\u02da\ud83c\udf7b\u0a6d\u30fbGeneral VC\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83e\udd42\u25de\u30fbMusic VC\ufe52\u0b67\u2e1d\u2e1d",
+                "\u22b9\u208a\u02da\ud83c\udf7b\u0a6d\u30fbStaff VC\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83e\udd42\u25de\u30fbOwner VC\ufe52\u0b67\u2e1d\u2e1d",
+                "\u2570\u2500\u2500\u2500\u2500\u300c\ud83e\udd42\u300d\u2500\u2500\u2500\u2500\u27a4"
+            ]
+        },
+        {
+            "category": "\u1770\ufe52\u2601\ufe52JOIN - TO - CREATE\ufe52\u2e1d\u2e1d",
+            "text": [
+                "\u22b9\u208a\u02da\ud83e\udd64\u0a6d\u30fbvoice-chat\u30fb\u0dc6\u02da\u208a"
+            ],
+            "vc": [
+                "\u25df\ud83e\uddca\u25de\u30fbJoin To Make\ufe52\u0b67\u2e1d\u2e1d"
+            ]
+        },
+        {
+            "category": "\u1770\ufe52\u2601\ufe52STAFF - ISLAND\ufe52\u2e1d\u2e1d",
+            "text": [
+                "\u22b9\u208a\u02da\ud83c\udf3f\u0a6d\u30fbstaff-news\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83c\udf43\u25de\u30fbstaff-chat\ufe52\u0b67\u2e1d\u2e1d"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u1770\ufe52\u2601\ufe52ENTRANCE\ufe52\u2e1d\u2e1d",
+            "text": [
+                "\u22b9\u208a\u02da\ud83c\udf2e\u0a6d\u30fbwelcome\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83c\udf55\u25de\u30fbserver-rules\ufe52\u0b67\u2e1d\u2e1d"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u1770\ufe52\u2601\ufe52LOGS\ufe52\u2e1d\u2e1d",
+            "text": [
+                "\u22b9\u208a\u02da\ud83d\udcc3\u0a6d\u30fbleft-logs\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83d\uddd2\u25de\u30fbsummrs-logs\ufe52\u0b67\u2e1d\u2e1d",
+                "community-update",
+                "setup-ki-mkc",
+                "\u22b9\u208a\u02da\ud83d\udcc3\u0a6d\u30fbwick-logs\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83d\uddd2\u25de\u30fbmodlogs\ufe52\u0b67\u2e1d\u2e1d",
+                "\u22b9\u208a\u02da\ud83d\udcc3\u0a6d\u30fbdyno-logs\u30fb\u0dc6\u02da\u208a",
+                "wick-logs",
+                "\u25df\ud83d\uddd2\u25de\u30fbtranscript-logs\ufe52\u0b67\u2e1d\u2e1d",
+                "\u22b9\u208a\u02da\ud83d\udcc3\u0a6d\u30fbflantic-logs\u30fb\u0dc6\u02da\u208a",
+                "\u25df\ud83d\uddd2\u25de\u30fbcarl-logs\ufe52\u0b67\u2e1d\u2e1d",
+                "\u22b9\u208a\u02da\ud83d\udcc3\u0a6d\u30fbticket-logs\u30fb\u0dc6\u02da\u208a",
+                "modlogs",
+                "\u25df\ud83d\uddd2\u25de\u30fbaperture-logs\ufe52\u0b67\u2e1d\u2e1d",
+                "flantic-private"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u1770\ufe52\u2601\ufe52DASHBOARD\ufe52\u2e1d\u2e1d",
+            "text": [],
+            "vc": []
+        },
+        {
+            "category": "\u1770\ufe52\u2601\ufe52GIVEAWAYS\ufe52\u2e1d\u2e1d",
+            "text": [],
+            "vc": []
+        }
+    ]
+}

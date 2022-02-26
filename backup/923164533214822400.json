@@ -1,0 +1,52 @@
+{
+    "backup": [
+        {
+            "category": "\ud83d\udc4b ~ Br\u00e1na",
+            "text": [
+                "\u256d\u30fb\ud83e\udd20\u30fbvitaj",
+                "\u2570\u30fb\ud83e\udd27\u30fbodpojenie"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udce0 ~ Server",
+            "text": [
+                "\u256d\u30fb\ud83d\udcf0\u30fbozn\u00e1menia",
+                "\u251c\u30fb\ud83c\udf28\u30fbv\u00fdpadky",
+                "\u251c\u30fb\ud83c\udf10\u30fbodkazy",
+                "\u2570\u30fb\u2728\u30fbostatn\u00e9"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udcbe ~ Psan\u00ed\u010dko",
+            "text": [
+                "\u256d\u30fb\ud83d\udcac\u30fbchat",
+                "\u251c\u30fb\ud83e\udd14\u30fbfunny",
+                "\u251c\u30fb\ud83d\udcbb\u30fblive-chat",
+                "\u2570\u30fb\ud83e\udd16\u30fbpr\u00edkazy"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udc65 ~ Voice",
+            "text": [],
+            "vc": [
+                "#\u256d\u30fb\ud83c\udf99\u30fbVoice \u00b9",
+                "#\u251c\u30fb\ud83c\udf7a\u30fbVoice \u00b2",
+                "#\u2570\u30fb\ud83d\udcfb\u30fbHudbi\u010dka"
+            ]
+        },
+        {
+            "category": "\ud83d\udd0e ~ SECRET",
+            "text": [
+                "\u256d\u30fb\ud83d\udcac\u30fbchat",
+                "\u251c\u30fb\ud83e\udd16\u30fbcommands",
+                "\u251c\u30fb\ud83e\udd16\u30fblog"
+            ],
+            "vc": [
+                "#\u2570\u30fb\ud83c\udfa4\u30fbvoice"
+            ]
+        }
+    ]
+}

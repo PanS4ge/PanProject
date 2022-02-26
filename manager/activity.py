@@ -1,4 +1,4 @@
-#{}activity - Change activity of bot (only for owner)
+#{}activity - Change activity of bot (only for dev)
 import utils
 import discord
 

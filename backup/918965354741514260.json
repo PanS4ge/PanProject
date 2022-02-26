@@ -1,0 +1,253 @@
+{
+    "backup": [
+        {
+            "category": "\u2501\u2501\u2501\u2022 high logs \u2022\u2501\u2501\u2501",
+            "text": [
+                "connects",
+                "character",
+                "admin",
+                "playermoney",
+                "bossmenu",
+                "dumpster",
+                "sellvehicle",
+                "mechanic",
+                "realestate",
+                "anticheat",
+                "ban"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2022 logs \u2022\u2501\u2501\u2501",
+            "text": [
+                "death",
+                "chat",
+                "commands",
+                "ooc",
+                "3dme",
+                "crafting",
+                "vehshop",
+                "inventory",
+                "robbery",
+                "stores",
+                "drops",
+                "robbing",
+                "stash",
+                "glovebox",
+                "reports",
+                "bot"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022dev\u2022\u2501\u2501\u2501\u2501",
+            "text": [
+                "dev",
+                "police",
+                "ems",
+                "crime",
+                "car"
+            ],
+            "vc": [
+                "dev"
+            ]
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022staff\u2022\u2501\u2501\u2501\u2501",
+            "text": [
+                "\ud83c\udf1f\u2507\u05e2\u05d3\u05db\u05d5\u05e0\u05d9-\u05e6\u05d5\u05d5\u05ea",
+                "\u274c\u2507\u05d0\u05d6\u05d4\u05e8\u05d5\u05ea-\u05e6\u05d5\u05d5\u05ea",
+                "\u274c\u2507\u05d7\u05d9\u05e1\u05d5\u05e8\u05d9-\u05e6\u05d5\u05d5\u05ea",
+                "\ud83d\udcac\u2506\u05e6\u05d0\u05d8-\u05e6\u05d5\u05d5\u05ea",
+                "\ud83c\udfab\u2506\u05e0\u05d5\u05d4\u05dc-\u05d8\u05d9\u05e7\u05d8\u05d9\u05dd",
+                "\ud83d\udc7b\u2507\u05e9\u05de\u05d5\u05ea-\u05e1\u05d8\u05d9\u05dd",
+                "\ud83c\udf8f\u2506\u05e9\u05d9\u05de\u05d5\u05e9-\u05d1\u05d0\u05d3\u05de\u05d9\u05df-\u05de\u05e0\u05d9\u05d5",
+                "\ud83c\udfa9\u2506\u05d4\u05d9\u05e8\u05db\u05db\u05d9\u05d4"
+            ],
+            "vc": [
+                "\ud83d\udd0a\u2506\u05e9\u05d9\u05d7\u05ea \u05e6\u05d5\u05d5\u05ea",
+                "\u23f1\u2506\u05d4\u05de\u05ea\u05e0\u05d4 \u05e9\u05d9\u05d7\u05ea \u05e6\u05d5\u05d5\u05ea"
+            ]
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022high staff\u2022\u2501\u2501\u2501\u2501",
+            "text": [
+                "\ud83c\udfa2\u2506\u05d8\u05d9\u05e4\u05d5\u05dc",
+                "\ud83d\udcac\u2506\u05e6\u05d0\u05d8-\u05e6\u05d5\u05d5\u05ea-\u05d2\u05d1\u05d5\u05d4",
+                "\ud83d\udd14\u2506\u05e2\u05d3\u05db\u05d5\u05e0\u05d9-\u05e6\u05d5\u05d5\u05ea-\u05d2\u05d1\u05d5\u05d4",
+                "\u05dc\u05d5\u05d2-\u05ea\u05e8\u05d5\u05de\u05d5\u05ea",
+                "\u05de\u05d7\u05d9\u05e8\u05d9\u05dd-\u05e8\u05db\u05d1"
+            ],
+            "vc": [
+                "\ud83c\udf1f\u2507\u05e6\u05d5\u05d5\u05ea \u05d2\u05d1\u05d5\u05d4\u05d4",
+                "\u2620 \u2506  \u05d4\u05e0\u05d4\u05dc\u05ea \u05e7\u05d4\u05d9\u05dc\u05d4"
+            ]
+        },
+        {
+            "category": "------------------------------------------------------------------------",
+            "text": [
+                "\u2705\u2506verify"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udcca Server Stats \ud83d\udcca",
+            "text": [],
+            "vc": [
+                "Member Count: 245",
+                "\ud83c\udfaf\u2506Target : 250"
+            ]
+        },
+        {
+            "category": "server stats",
+            "text": [
+                "\ud83d\udd14\u2506\u05e1\u05d8\u05d8\u05d5\u05e1-\u05d4\u05e9\u05e8\u05ea",
+                "\ud83d\udd14\u2506\u05e8\u05d9\u05e1\u05d8\u05d0\u05e8\u05d8\u05d9\u05dd"
+            ],
+            "vc": []
+        },
+        {
+            "category": "------server -----",
+            "text": [
+                "\ud83d\udc4b\u2506\u05d1\u05e8\u05d5\u05db\u05d9\u05dd-\u05d4\u05d1\u05d0\u05d9\u05dd"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2022 information \u2022\u2501\u2501\u2501",
+            "text": [
+                "\ud83d\udce2\u2506\u05d4\u05db\u05e8\u05d6\u05d5\u05ea-\u05d5\u05e2\u05d3\u05db\u05d5\u05e0\u05d9\u05dd",
+                "\ud83d\udcdc\u2506rp-\u05d7\u05d5\u05e7\u05d9",
+                "\ud83d\udcc4\u2506\u05d7\u05d5\u05e7\u05d9-\u05d3\u05d9\u05e1\u05e7\u05d5\u05e8\u05d3",
+                "\ud83d\udd2e\u2506\u05d1\u05d5\u05e1\u05d8\u05d9\u05dd",
+                "\ud83d\udcb0\u2506\u05e7\u05d8\u05dc\u05d5\u05d2-\u05ea\u05e8\u05d5\u05de\u05d5\u05ea",
+                "\ud83c\udf89\u2506\u05d4\u05d2\u05e8\u05dc\u05d5\u05ea",
+                "\ud83d\udcbc\u2506\u05d3\u05e8\u05d5\u05e9\u05d9\u05dd",
+                "\ud83c\udfa8\u2506\u05e2\u05d9\u05e6\u05d5\u05d1\u05d9\u05dd",
+                "\ud83c\udf8a\u2506\u05d0\u05d9\u05d5\u05d5\u05e0\u05d8\u05d9\u05dd",
+                "\ud83c\udfa5\u2506\u05dc\u05d9\u05d9\u05d1\u05d9\u05dd",
+                "\ud83d\udd27\u2506\u05e2\u05d3\u05db\u05d5\u05e0\u05d9-\u05ea\u05db\u05e0\u05d5\u05ea",
+                "\ud83d\udc40\u2506\u05d4\u05d3\u05dc\u05e4\u05d5\u05ea",
+                "\ud83d\udcdd\u2506\u05d8\u05e4\u05e1\u05d9\u05dd",
+                "\ud83d\udd17\u2506\u05e7\u05d4\u05d9\u05dc\u05d5\u05ea",
+                "\ud83c\udfad\u2506\u05e9\u05d0\u05dc\u05d5\u05ea-\u05d9\u05d5\u05de\u05d9\u05d5\u05ea"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022genral\u2022\u2501\u2501\u2501\u2501",
+            "text": [
+                "\ud83d\udcac\u2506\u05e6\u05d0\u05d8-\u05e8\u05d0\u05e9\u05d9",
+                "\ud83d\udcf8\u2506\u05de\u05d3\u05d9\u05d4",
+                "\ud83e\udd16\u2506\u05e4\u05e7\u05d5\u05d3\u05d5\u05ea-\u05d1\u05d5\u05d8\u05d9\u05dd",
+                "\ud83d\udc64\u2506peds",
+                "\ud83d\udcdd\u2506\u05e1\u05e4\u05d9\u05e8\u05d4-\u05e2\u05d3-1500",
+                "fivem-il-reaction"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022\u05d4\u05e6\u05e2\u05d5\u05ea/\u05d1\u05d0\u05d2\u05d9\u05dd\u2022\u2501\u2501\u2501\u2501",
+            "text": [
+                "\ud83d\udccb\u2506\u05d4\u05e6\u05e2\u05d5\u05ea-\u05dc\u05e9\u05e8\u05ea",
+                "\ud83d\udccb\u2506bugs",
+                "bug-log"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022voice\u2022\u2501\u2501\u2501\u2501",
+            "text": [],
+            "vc": [
+                "\u300c\ud83d\udd0a\u300dVoice #1",
+                "\u300c\ud83d\udd0a\u300dVoice #2",
+                "\u300c\ud83d\udd0a\u300dVoice #3"
+            ]
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022privte\u2022\u2501\u2501\u2501\u2501",
+            "text": [],
+            "vc": [
+                "\u300c\ud83d\udd10\u300d Private #1",
+                "\u300c\ud83d\udd10\u300d Private #2",
+                "\u300c\ud83d\udd10\u300d Private #3"
+            ]
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022support\u2022\u2501\u2501\u2501\u2501",
+            "text": [
+                "\u05de\u05e9\u05d5\u05d1-\u05e6\u05d5\u05d5\u05ea\u2506\u270d",
+                "\u05e6\u05d0\u05d8-\u05ea\u05de\u05d9\u05db\u05d4\u2506\ud83d\udccc"
+            ],
+            "vc": [
+                "\ud83d\udcde\u2506Support 1",
+                "\ud83d\udcde\u2506Support 2",
+                "\ud83d\udcde\u2506Support 3",
+                "\ud83d\udcde\u2506Support 4",
+                "\ud83d\udcde\u2506Support 5",
+                "\ud83d\udcde\u2506Support 6",
+                "\u23f0\u2506Waiting For Support"
+            ]
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2501\u2022Test\u2022\u2501\u2501\u2501\u2501\u2501",
+            "text": [],
+            "vc": [
+                "\ud83d\udcc3\u2506Test 1",
+                "\ud83d\udcc3\u2506Test 2",
+                "\u23f0\u2506Waiting For Test"
+            ]
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022 ticket \u2022\u2501\u2501\u2501\u2501",
+            "text": [
+                "\ud83c\udfab\u2506\u05e4\u05ea\u05d7-\u05d8\u05d9\u05e7\u05d8",
+                "\ud83c\udfab\u2506\u05e4\u05d5\u05e8\u05de\u05d8-\u05d8\u05d9\u05e7\u05d8",
+                "\ud83c\udfab\u2506\u05dc\u05d5\u05d2\u05d9\u05dd-\u05dc\u05d8\u05d9\u05e7\u05d8\u05d9\u05dd",
+                "ticket-0311",
+                "\u05dc\u05d0-\u05dc\u05e1\u05d2\u05d5\u05e8",
+                "ticket-0330",
+                "ticket-0332",
+                "ticket-0336",
+                "ticket-0338"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udc6e\u2506LSPD",
+            "text": [
+                "\ud83d\udc6e\u2506\u05e2\u05d3\u05db\u05d5\u05e0\u05d9\u05dd-\u05e9\u05dc-\u05d4\u05de\u05e9\u05d8\u05e8\u05d4"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\ude91\u2506\u05de\u05d3\"\u05d0",
+            "text": [
+                "\ud83d\ude91\u2506\u05e2\u05d3\u05db\u05d5\u05e0\u05d9-ems"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\ud83d\udd2a\u2506\u05e4\u05e9\u05e2",
+            "text": [
+                "\u05e2\u05d3\u05db\u05d5\u05e0\u05d9-\u05e4\u05e9\u05e2-\ud83d\udd2a",
+                "\ud83d\udd2a\u2506\u05d7\u05d5\u05e7\u05d9-\u05e4\u05e9\u05e2"
+            ],
+            "vc": []
+        },
+        {
+            "category": "ban",
+            "text": [
+                "ban"
+            ],
+            "vc": []
+        },
+        {
+            "category": "\u2501\u2501\u2501\u2501\u2022AFK\u2022\u2501\u2501\u2501\u2501",
+            "text": [],
+            "vc": [
+                "\ud83d\udca4\u2506AFK"
+            ]
+        }
+    ]
+}
