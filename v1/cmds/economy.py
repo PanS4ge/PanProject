@@ -15,10 +15,32 @@ import math
 
 import utils
 
+language = {}
+with open(f"language_files/english.json", encoding='utf8') as data:
+    language = json.load(data)
+
+serverlang = {}
+with open(f"language_server.json", encoding='utf8') as data:
+    serverlang = json.load(data)
+
 with open(f"config.json", encoding='utf8') as data:
     config = json.load(data)
 
 eco_curr = "🍟"
+
+async def Cmd(message, client):
+    if("bal" in message.content):
+        Cmd_Bal(message)
+    elif("earn" in message.content):
+        Cmd_Earn(message)
+    elif("leaderboard" in message.content):
+        Cmd_Leaderboard(message, client)
+    elif("set" in message.content):
+        Cmd_Set_Eco(message)
+    elif("send" in message.content):
+        Cmd_Send_Money(message)
+    elif("ccd" in message.content and utils.is_owner_of_bot(message.author.id)):
+        Cmd_ClearCD(message)
 
 def Get_Server_Net_Worth(guild):
     try:
@@ -94,7 +116,7 @@ async def Cmd_Earn(message):
     try:
         #print(int(time.time()) - cd[str(message.author.id)])
         if(not(int(time.time()) - cd[str(message.author.id)] >= 3600)):
-            return await message.channel.send(f"""Sorry, you can run this command again in {math.floor(60 - (int(time.time()) - cd[str(message.author.id)]) / 60)} minutes.""")
+            return await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['cooldown_hour'].replace("{math.floor(60 - (int(time.time()) - cd[str(message.author.id)]) / 60)}", math.floor(60 - (int(time.time()) - cd[str(message.author.id)]) / 60)))
     except:
         pass
     try:
@@ -122,18 +144,18 @@ async def Cmd_Earn(message):
             econ[str(message.author.id)] = mon
         with open(f"ecojson/{str(message.guild.id)}.json", "w") as f:
             f.write(json.dumps(econ, indent=4, sort_keys=True))
-        await message.channel.send(f"You earned {mon}{eco_curr}")
+        await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['ecoearn'].replace("{mon}", mon).replace("{eco_curr}", eco_curr))
 
     except Exception as e:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)
-        await message.channel.send("Error. I saved error in my error database, my creator will check out.")
+        await message.channel.send(language[serverlang[str(message.guild.id)]]['global']['error_save'])
 
 async def Cmd_Leaderboard(message, client):
         try:
             if("server" in message.content):
                 dat = await Get_Global_Data(client)
                 dat.sort(key=sort_func, reverse=True)
-                embedVar = discord.Embed(title="Global Leaderboard", description="for Pan-Project Bot.", color=0x00ff00)
+                embedVar = discord.Embed(title=language[serverlang[str(message.guild.id)]]['economy']['glb'], description=f"{language[serverlang[str(message.guild.id)]]['backup']['for']} {language[serverlang[str(message.guild.id)]]['backup']['bot_project_name']}", color=0x00ff00)
                 amount_of_server = 10
                 if(len(dat) < 10):
                     amount_of_server = len(dat)
@@ -142,11 +164,11 @@ async def Cmd_Leaderboard(message, client):
                     #print(dat)
                     #print(f"{str(x)}: {dat[x-1]['name']} with {dat[x-1]['nw']}{eco_curr}")
                     yee = '\*'
-                    temp = f"{str(x)}. *{dat[x-1]['name']}* with *{dat[x-1]['nw']}*{eco_curr}"
+                    temp = f"{str(x)}. *{dat[x-1]['name']}* {language[serverlang[str(message.guild.id)]]['economy']['with']} *{dat[x-1]['nw']}*{eco_curr}"
                     embedVar.add_field(name=temp, value=f"{int(len(temp)) * yee}", inline=False)
                 if(amount_of_server == 10):
                     if (dat[0]['name'] != message.guild.name):
-                        embedVar.add_field(name=f"Your place on leaderboard", value=int(len("Your place on leaderboard")) * '\*', inline=False)
+                        embedVar.add_field(name=f"{language[serverlang[str(message.guild.id)]]['economy']['your_place']}", value=int(len(language[serverlang[str(message.guild.id)]]['economy']['your_place'])) * '\*', inline=False)
 
                     for t in range(1+amount_of_server, len(dat)):
                         if(dat[t-1]['name'] == message.guild.name):
@@ -156,7 +178,7 @@ async def Cmd_Leaderboard(message, client):
             else:
                 dat = await Get_Server_Data(client, message.guild.id)
                 dat.sort(key=sort_func, reverse=True)
-                embedVar = discord.Embed(title="Global Leaderboard", description="for Pan-Project Bot.", color=0x00ff00)
+                embedVar = discord.Embed(title=language[serverlang[str(message.guild.id)]]['economy']['glb'], description=f"{language[serverlang[str(message.guild.id)]]['backup']['for']} {language[serverlang[str(message.guild.id)]]['backup']['bot_project_name']}", color=0x00ff00)
                 amount_of_server = 10
                 if(len(dat) < 10):
                     amount_of_server = len(dat)
@@ -165,20 +187,20 @@ async def Cmd_Leaderboard(message, client):
                     #print(dat)
                     #print(f"{str(x)}: {dat[x-1]['name']} with {dat[x-1]['nw']}{eco_curr}")
                     yee = '\*'
-                    temp = f"{str(x)}. *{dat[x-1]['name']}* with *{dat[x-1]['nw']}*{eco_curr}"
+                    temp = f"{str(x)}. *{dat[x-1]['name']}* {language[serverlang[str(message.guild.id)]]['economy']['with']} *{dat[x-1]['nw']}*{eco_curr}"
                     embedVar.add_field(name=temp, value=f"{int(len(temp)) * yee}", inline=False)
                 if(amount_of_server == 10):
                     if (dat[0]['name'] != message.guild.name):
-                        embedVar.add_field(name=f"Your place on leaderboard", value=int(len("Your place on leaderboard")) * '\*', inline=False)
+                        embedVar.add_field(name=f"{language[serverlang[str(message.guild.id)]]['economy']['your_place']}", value=int(len("Your place on leaderboard")) * '\*', inline=False)
 
                     for t in range(1+amount_of_server, len(dat)):
                         if(dat[t-1]['name'] == message.guild.name):
-                            temp = f"{t+amount_of_server}. {dat[t-1]['name']} with {dat[t-1]['nw']}{eco_curr}"
-                            embedVar.add_field(name=f"{t+amount_of_server}. {dat[t-1]['name']} with {dat[t-1]['nw']}{eco_curr}", value=int(len(temp)) * '\*', inline=False)
+                            temp = f"{t+amount_of_server}. {dat[t-1]['name']} {language[serverlang[str(message.guild.id)]]['economy']['with']} {dat[t-1]['nw']}{eco_curr}"
+                            embedVar.add_field(name=f"{t+amount_of_server}. {dat[t-1]['name']} {language[serverlang[str(message.guild.id)]]['economy']['with']} {dat[t-1]['nw']}{eco_curr}", value=int(len(temp)) * '\*', inline=False)
                 await message.channel.send(embed=embedVar)
         except Exception as e:
             await utils.save_error(str(message.content), os.path.basename(__file__), e)
-            await message.channel.send("Error. I saved error in my error database, my creator will check out.")
+            await message.channel.send(language[serverlang[str(message.guild.id)]]['global']['error_save'])
 
 async def Cmd_Bal(message):
     try:
@@ -186,12 +208,12 @@ async def Cmd_Bal(message):
             cnt = json.loads(cny.read())
             try:
                 if (cnt[str(message.author.id)] != 0):
-                    await message.channel.send(f"Your balance count is {'{:,}'.format(cnt[str(message.author.id)])}{eco_curr}")
+                    await message.channel.send(language[serverlang[str(message.guild.id)]]['global']['error_save'].replace("{'{:,}'.format(cnt[str(message.author.id)])}", '{:,}'.format(cnt[str(message.author.id)])).replace("{eco_curr}", eco_curr))
             except:
-                await message.channel.send(f"No data.")
+                await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['nodata'])
     except Exception as e:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)
-        await message.channel.send("Error. I saved error in my error database, my creator will check out.")
+        await message.channel.send(language[serverlang[str(message.guild.id)]]['global']['error_save'])
 
 async def Cmd_ClearCD(message):
     if(utils.is_owner_of_bot(message.author.id)):
@@ -201,7 +223,7 @@ async def Cmd_ClearCD(message):
         cd[str(message.author.id)] = 1
         with open(f"cooldown.json", "w") as cny:
             cny.write(json.dumps(cd, indent=4, sort_keys=True))
-    await message.channel.send("Removed Cooldown!")
+    await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['ccd'])
 
 def Get_Bank(memid, guiid):
     cd = {}
@@ -236,13 +258,13 @@ async def Cmd_Send_Money(message):
                         e[str(ping)] = int(e[str(ping)]) + int(message.content.split(" ")[3])
                         e[str(message.author.id)] = int(e[str(message.author.id)]) - int(message.content.split(" ")[3])
                     else:
-                        await message.channel.send("Bank amount is insufficent")
+                        await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['not_enough_money'])
                 except:
                     if (int(Get_Bank(message.author.id, message.guild.id)) >= int(message.content.split(" ")[3])):
                         e[str(ping)] = int(message.content.split(" ")[3])
                         e[str(message.author.id)] = int(e[str(message.author.id)]) - int(message.content.split(" ")[3])
                     else:
-                        await message.channel.send("Bank amount is insufficent")
+                        await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['not_enough_money'])
                 with open(f"ecojson/{message.guild.id}.json", "w") as cny:
                     cny.write(json.dumps(e, indent=4, sort_keys=True))
                 ef = message.content.split(" ")[2]
@@ -251,13 +273,13 @@ async def Cmd_Send_Money(message):
                 elif ("<@" in ef):
                     ef = ef.replace("<@", "")
                 ef = ef.replace(">", "")
-                await message.channel.send(f"You payed him {message.content.split(' ')[3]}{eco_curr}!\nYour new balance: {Get_Bank(message.author.id, message.guild.id)}{eco_curr}\n{message.content.split(' ')[2]} balance: {Get_Bank(ping, message.guild.id)}{eco_curr}")
-            except Exception as e:
-                return await message.channel.send("Unable to set due to error\n" + str(e))
-        except Exception as ex:
-            return await message.channel.send("Invalid ping\n" + str(ex))
-    except Exception as exc:
-        return await message.channel.send("Invalid arguments\n" + str(exc))
+                await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['send'].replace("{eco_curr}", eco_curr).replace("{message.content.split(' ')[3]}", message.content.split(' ')[3]).replace("{Get_Bank(message.author.id, message.guild.id)}", Get_Bank(message.author.id, message.guild.id)).replace("{message.content.split(' ')[2]}", message.content.split(' ')[2]).replace("{Get_Bank(ping, message.guild.id)}", Get_Bank(ping, message.guild.id)))
+            except Exception:
+                return await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['error'])
+        except Exception:
+            return await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['invalid_ping'])
+    except Exception:
+        return await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['invalid_args'])
 
 async def Cmd_Set_Eco(message):
     if(utils.is_owner_of_bot(message.author.id)):
@@ -284,13 +306,14 @@ async def Cmd_Set_Eco(message):
                     elif ("<@" in ef):
                         ef = ef.replace("<@", "")
                     ef = ef.replace(">", "")
-                    await message.channel.send(f"You set his {eco_curr}\n{message.content.split(' ')[2]} balance: {Get_Bank(message.author.id, message.guild.id)}{eco_curr}")
+                    #await message.channel.send(f"You set his {eco_curr}\n{message.content.split(' ')[2]} balance: {Get_Bank(message.author.id, message.guild.id)}{eco_curr}")
+                    await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['set'].replace("{eco_curr}", eco_curr).replace("{message.content.split(' ')[3]}", message.content.split(' ')[3]))
                 except:
-                    return await message.channel.send("Unable to set due to error")
+                    return await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['error'])
             except:
-                return await message.channel.send("Invalid ping")
+                return await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['invalid_ping'])
         except:
-            return await message.channel.send("Invalid arguments")
+            return await message.channel.send(language[serverlang[str(message.guild.id)]]['economy']['invalid_args'])
 
 async def Give_Money(guild, ping, amount):
     with open(f"ecojson/{guild}.json", "r") as cny:

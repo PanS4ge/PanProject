@@ -4,6 +4,7 @@ import os
 import glob
 import json
 import utils
+import asyncio
 
 import BadgesManager
 
@@ -26,7 +27,6 @@ async def Send_All_Backgrounds(message):
                 await message.channel.send(content=f"id: {str(x)} - has empty space", file=discord.File(os.path.abspath(f"cmds/image_data/bg/{str(x)}.png")))
 
 
-# TODO: FUNCTION TO ADD MAX 15 PEOPLE WITH ADMINISTRATOR
 async def Load_Others_Backup(message, guiid):
     try:
         embedVar = discord.Embed(title="Loading Backup", description="for Pan-Project Bot.", color=0x00ff00)
@@ -89,6 +89,28 @@ def Create_Badge(emoji, name, desc, owners):
         cny.write(json.dumps(badge))
         cny.close()
 
+async def Create_Badges_Role(message):
+    badge = {}
+    with open(f"badges.json", "r") as cny:
+        badge = json.loads(cny.read())
+        cny.close()
+    for x in badge["badge"]:
+        role = await message.guild.create_role(name=x["name"] + " badge owners")
+        x["role_id"] = role.id
+        if(len(x["owners"]) != 0):
+            for y in x["owners"]:
+                try:
+                    pee = message.guild.get_member(y)
+                    await pee.add_roles(role)
+                    print(f"Added {pee.name} to {x['name']} badge owners")
+                except:
+                    print("Error in there")
+            await asyncio.sleep(5)
+        print(f"Created {x['name']} badges owners")
+    with open(f"badges.json", "w") as cny:
+        cny.write(json.dumps(badge))
+        cny.close()
+
 def Add_Badge(ide, towho):
     badge = {}
     with open(f"badges.json", "r") as cny:
@@ -137,50 +159,50 @@ def Clear_Badges(ide):
         cny.write(json.dumps(badge))
         cny.close()
 
-async def Cmd(message, client):
+async def Cmd(language, serverlang, message, client):
     try:
         if("await " in message.content):
             try:
                 if (utils.is_owner_of_bot(message.author.id)):
-                    evalDone = await eval(str(message.content).replace(str(message.content).split(" ")[0], "").replace("await ", ""))
+                    evalDone = await eval(str(message.content).replace(str(message.content).split(" ")[1], "").replace("await ", ""))
 
                     embedEval = discord.Embed(title=":white_check_mark: Eval!", color=0x2eb42b)
                     embedEval.add_field(name=":inbox_tray: Got",
-                                        value=f"{str(message.content).replace(str(message.content).split(' ')[0], '')}")
+                                        value=f"{str(message.content).replace(str(message.content).split(' ')[0] + ' ', '')}")
                     embedEval.add_field(name=":outbox_tray: Back", value=f"{evalDone}")
                     await message.channel.send(embed=embedEval)
                 else:
-                    await message.channel.send("Only for owner")
+                    await message.channel.send("Only for dev")
             except Exception as e:
                 if (utils.is_owner_of_bot(message.author.id)):
                     embedEval = discord.Embed(title=":negative_squared_cross_mark: Eval!", color=0x2eb42b)
                     embedEval.add_field(name=":inbox_tray: Got",
-                                        value=f"{str(message.content).replace(str(message.content).split(' ')[0], '')}")
+                                        value=f"{str(message.content).replace(str(message.content).split(' ')[0] + ' ', '')}")
                     embedEval.add_field(name=":outbox_tray: Back", value=f":x: {e} :x:")
                     await message.channel.send(embed=embedEval)
                 else:
-                    await message.channel.send("Only for owner")
+                    await message.channel.send("Only for dev")
         else:
             try:
                 if(utils.is_owner_of_bot(message.author.id)):
-                    evalDone = eval(str(message.content).replace(str(message.content).split(" ")[0], ""))
+                    evalDone = exec(str(message.content).replace(str(message.content).split(" ")[1], ""))
 
                     embedEval = discord.Embed(title=":white_check_mark: Eval!", color=0x2eb42b)
-                    embedEval.add_field(name=":inbox_tray: Got", value=f"{str(message.content).replace(str(message.content).split(' ')[0], '')}")
+                    embedEval.add_field(name=":inbox_tray: Got", value=f"{str(message.content).replace(str(message.content).split(' ')[0] + ' ', '')}")
                     embedEval.add_field(name=":outbox_tray: Back", value=f"{evalDone}")
                     await message.channel.send(embed=embedEval)
                 else:
-                    await message.channel.send("Only for owner")
+                    await message.channel.send("Only for dev")
             except Exception as e:
                 if (utils.is_owner_of_bot(message.author.id)):
                     embedEval = discord.Embed(title=":negative_squared_cross_mark: Eval!", color=0x2eb42b)
-                    embedEval.add_field(name=":inbox_tray: Got",value=f"{str(message.content).replace(str(message.content).split(' ')[0], '')}")
+                    embedEval.add_field(name=":inbox_tray: Got",value=f"{str(message.content).replace(str(message.content).split(' ')[0] + ' ', '')}")
                     embedEval.add_field(name=":outbox_tray: Back", value=f":x: {e} :x:")
                     await message.channel.send(embed=embedEval)
                 else:
-                    await message.channel.send("Only for owner")
+                    await message.channel.send("Only for dev")
     except RuntimeWarning:
         pass
-    except:
+    except Exception as e:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)
         await message.channel.send("Error. I saved error in my error database, my creator will check out.")

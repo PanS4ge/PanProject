@@ -11,53 +11,28 @@ async def Cmd(language, serverlang, message, client):
     try:
         if (not (utils.has_permission(message.author, "manage_guild"))):
             return await message.channel.send("You need `MANAGE_GUILD` permission")
-        if("injected" in str(message.content)):
-            embedVar = discord.Embed(title="Loading **INJECTED** Backup", description="for Pan-Project Bot.", color=0x00ff00)
-            if (len(glob.glob(f"backup/{message.guild.id}.json")) == 0):
-                await message.channel.send("Bro, I can't help you, you didn't make any backups")
-                return
-            await message.channel.send(
-                "Clearing your server - don't worry, I will fix it! (but you fix your permissions, because creator is lazy af)")
-            for channel in message.guild.categories:
-                await channel.delete()
-            for channel in message.guild.text_channels:
-                await channel.delete()
-            for channel in message.guild.voice_channels:
-                await channel.delete()
-            bac = {}
-            with open(f"backup/injected/{message.guild.id}_injected.json") as bu:
-                bac = json.load(bu)
-            for cat in bac['backup']:
-                cate = await message.guild.create_category(name=cat['category'])
-                for text in cat['text']:
-                    await message.guild.create_text_channel(name=text, category=cate)
-                for vc in cat['vc']:
-                    await message.guild.create_voice_channel(name=vc, category=cate)
+        embedVar = discord.Embed(title="Loading Backup", description="for Pan-Project Bot.", color=0x00ff00)
+        if(len(glob.glob(f"backup/{message.guild.id}.json")) == 0):
+            await message.channel.send("Bro, I can't help you, you didn't make any backups")
+            return
+        await message.channel.send("Clearing your server - don't worry, I will fix it! (but you fix your permissions, because creator is lazy af)")
+        for channel in message.guild.categories:
+            await channel.delete()
+        for channel in message.guild.text_channels:
+            await channel.delete()
+        for channel in message.guild.voice_channels:
+            await channel.delete()
+        bac = {}
+        with open(f"backup/{message.guild.id}.json") as bu:
+            bac = json.load(bu)
+        for cat in bac['backup']:
+            cate = await message.guild.create_category(name=cat['category'])
+            for text in cat['text']:
+                await message.guild.create_text_channel(name=text, category=cate)
+            for vc in cat['vc']:
+                await message.guild.create_voice_channel(name=vc, category=cate)
 
-            await message.channel.send(embed=embedVar)
-        else:
-            embedVar = discord.Embed(title="Loading Backup", description="for Pan-Project Bot.", color=0x00ff00)
-            if(len(glob.glob(f"backup/injected/{message.guild.id}_injected.json")) == 0):
-                await message.channel.send("Bro, I can't help you, you didn't inject any backups")
-                return
-            await message.channel.send("Clearing your server - don't worry, I will fix it! (but you fix your permissions, because creator is lazy af)")
-            for channel in message.guild.categories:
-                await channel.delete()
-            for channel in message.guild.text_channels:
-                await channel.delete()
-            for channel in message.guild.voice_channels:
-                await channel.delete()
-            bac = {}
-            with open(f"backup/{message.guild.id}.json") as bu:
-                bac = json.load(bu)
-            for cat in bac['backup']:
-                cate = await message.guild.create_category(name=cat['category'])
-                for text in cat['text']:
-                    await message.guild.create_text_channel(name=text, category=cate)
-                for vc in cat['vc']:
-                    await message.guild.create_voice_channel(name=vc, category=cate)
-
-            await message.channel.send(embed=embedVar)
+        await message.channel.send(embed=embedVar)
     except Exception as e:
         try:
             await message.channel.send("Error. I saved error in my error database, my creator will check out.")

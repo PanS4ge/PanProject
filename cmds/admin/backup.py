@@ -21,7 +21,7 @@ async def Cmd(language, serverlang, message, client):
 
         await message.channel.send(language[serverlang[str(message.guild.id)]]["backup"]['start_bu'])
 
-        embedVar = discord.Embed(title=language[serverlang[str(message.guild.id)]]["backup"]['end_bu'], description=f"{language[serverlang[str(message.guild.id)]]['global']['for']} {language[serverlang[str(message.guild.id)]]['global']['bot_project_name']}", color=0x00ff00)
+        embedVar = discord.Embed(title=language[serverlang[str(message.guild.id)]]["backup"]['end_bu'], description=f"{language[serverlang[str(message.guild.id)]]['backup']['for']} {language[serverlang[str(message.guild.id)]]['backup']['bot_project_name']}", color=0x00ff00)
         dt = datetime.datetime.fromtimestamp(timeunixxx)
         embedVar.add_field(name=language[serverlang[str(message.guild.id)]]['backup']['date'], value=dt, inline=False)
 
@@ -42,9 +42,7 @@ async def Cmd(language, serverlang, message, client):
             backup_str["backup"].append(temp)
         with open(f"backup/{message.guild.id}.json", "w") as f:
             f.write(json.dumps(backup_str, indent=4))
-        await message.channel.send(content="On private messages you will get a json file!", embed=embedVar)
-        file = discord.File(f"C:/Users/User/PycharmProjects/discord.py/backup/{str(message.guild.id)}.json")
-        await message.author.send(file=file)
+        await message.channel.send(embed=embedVar)
     except Exception as e:
         await utils.save_error(str(message.content), os.path.basename(__file__), e)
         await message.channel.send(language[serverlang[str(message.guild.id)]]['global']['error_save'])

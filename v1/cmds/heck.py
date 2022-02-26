@@ -21,14 +21,15 @@ def get_num_array(array):
         temp = temp + ye
     return temp / len(array)
 
-async def Cmd(message, bot):
+async def Cmd(language, serverlang, message, client):
     try:
         if("sage" in message.content.split(' ')[2].lower()):
-            return await message.channel.send("You can't heck my owner")
+            return await message.channel.send("You can't heck my dev")
         msgheck = await message.channel.send("☎️Calling hecker... Please wait...")
         await asyncio.sleep(random.randint(1, 10))
         await msgheck.edit(content="Hecker got it, starting heck...")
         await asyncio.sleep(3)
+<<<<<<< HEAD:v1/cmds/heck.py
         await msgheck.edit(content=f"```Setting target: {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}```")
         await asyncio.sleep(random.randint(5, 10))
         await msgheck.edit(content=f"```Target locked```")
@@ -50,10 +51,33 @@ async def Cmd(message, bot):
         await msgheck.edit(content=f"```Updating {message.content.split(' ')[2]} social status```")
         await asyncio.sleep(random.randint(100, 1012) / 100)
         await msgheck.edit(content=f"```Stealing {message.content.split(' ')[2]}'s {random.randint(1, 50 * len(message.content.split(' ')[2]))} social points```")
+=======
+        await msgheck.edit(content=f"Setting target: {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}")
+        await asyncio.sleep(random.randint(5, 10))
+        await msgheck.edit(content=f"Target locked")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Brute-forcing {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Freezing {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Sending nukes on {message.content.split(' ')[2]}'s {message.content.split(' ')[1]}")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Checking {message.content.split(' ')[2]}'s browsing history")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Checking {message.content.split(' ')[2]}'s browsing history\nFound:\n{random.randint(2, 1135)} sus websites")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Checking {message.content.split(' ')[2]}'s browsing history\nFound:\n{random.randint(2, 1135)} very sus websites")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Reporting {message.content.split(' ')[2]}'s death to his parents...")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Updating {message.content.split(' ')[2]} social status")
+        await asyncio.sleep(random.randint(100, 1012) / 100)
+        await msgheck.edit(content=f"Stealing {message.content.split(' ')[2]}'s {random.randint(1, 50 * len(message.content.split(' ')[2]))} social points")
+>>>>>>> cbaed83ec4a6413c32ae350a0b58bb51f3c2cf59:cmds/fun/heck.py
         await asyncio.sleep(random.randint(100, 1012) / 100)
         try:
             if("rem_dc_acc" in message.content):
-                user = get(bot.get_all_members(), id=message.author.id)
+                user = get(client.get_all_members(), id=message.author.id)
                 if user:
                     await message.channel.send(f"Exception!\nException: User cannot can't be found\nRemoving message.author.id...")
                     user.edit(nick="Deleted User 2137SUS69")

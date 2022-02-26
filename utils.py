@@ -31,6 +31,13 @@ def has_permission(member : discord.member, perm):
         print("Invalid permission, I will deny this command, but fix this - here url: https://discordpy.readthedocs.io/en/stable/api.html?highlight=permissions#discord.Permissions")
         return False
 
+def has_permission(member : discord.member, perm):
+    role = member.top_role
+    if(role.permissions.administrator):
+        return True
+    else:
+        return getattr(role.permissions, perm)
+
 async def save_error(msg, file, ex):
     with open('cmds/error.json', 'r', encoding='utf-8') as f:
         err = json.load(f)

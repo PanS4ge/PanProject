@@ -22,9 +22,9 @@ def Get_Server_Messages(guild):
             allnom = allnom + int(value)
     return allnom
 
-async def Cmd(message):
+async def Cmd(language, serverlang, message, client):
     try:
-        embedVar = discord.Embed(title="Guild-Info", description=f"For Pan-Project bot.", color=0x00ff00)
+        embedVar = discord.Embed(title="Guild-Info", description=f"{language[serverlang[str(message.guild.id)]]['global']['for']} {language[serverlang[str(message.guild.id)]]['global']['bot_project_name']}", color=0x00ff00)
         text_channels = len(message.guild.text_channels)
         voice_channels = len(message.guild.voice_channels)
         categories = len(message.guild.categories)
